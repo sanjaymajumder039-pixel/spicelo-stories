@@ -782,3 +782,36 @@ button {
 .about strong {
     color: #e67e22;
 }
+
+/* ===== CONTACT SECTION ===== */
+
+.contact{
+    background:#fff7f0;
+    padding:70px 20px;
+    text-align:center;
+}
+
+.contact .container{
+    max-width:800px;
+    margin:auto;
+}
+
+.contact h2{
+    font-size:2rem;
+    color:#d35400;
+    margin-bottom:20px;
+}
+
+.contact p{
+    font-size:1.1rem;
+    color:#555;
+    margin:10px 0;
+}
+
+.contact-info{
+    margin-top:25px;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
