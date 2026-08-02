@@ -815,3 +815,41 @@ button {
     border-radius:12px;
     box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
+/* ===== PREMIUM FOOTER ===== */
+
+.footer{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.footer-content{
+    max-width:900px;
+    margin:auto;
+}
+
+.footer h3{
+    margin-bottom:10px;
+    color:#f39c12;
+}
+
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 12px;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:#f39c12;
+}
+
+.designer{
+    margin-top:15px;
+    font-size:15px;
+}
