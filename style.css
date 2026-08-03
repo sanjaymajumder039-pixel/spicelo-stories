@@ -880,3 +880,45 @@ button {
     margin-top:15px;
     font-size:15px;
 }
+/* ===== Recipe Card Hover Animation ===== */
+
+.food-card:hover{
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+
+}
+/* ===== Universal Button Animation ===== */
+
+button{
+
+    transition: all .3s ease;
+
+}
+
+button:hover{
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,.20);
+
+}
+
+button:active{
+
+    transform: scale(.96);
+
+}
+/* ===== Scroll Reveal ===== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
