@@ -768,9 +768,9 @@ button {
 }
 
 .recipe-container li {
-    margin: 10px 0;
-    font-size: 17px;
-    line-height: 1.5;
+    margin: 12px 0;
+    font-size: 20px;
+    line-height: 1.7;
 }
 .recipe-container ol {
     background: #fff8f0;
@@ -782,8 +782,8 @@ button {
 
 .recipe-container ol li {
     margin: 12px 0;
-    font-size: 17px;
-    line-height: 1.6;
+    font-size: 20px;
+    line-height: 1.7;
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -974,5 +974,31 @@ section p{
     color:#555;
 
     text-align:center;
+
+}
+@media (max-width:768px){
+
+    .recipe-container li{
+        font-size:20px;
+        line-height:1.8;
+    }
+
+    .recipe-container ol li{
+        font-size:20px;
+        line-height:1.8;
+    }
+
+}
+/* ===== Final Mobile Recipe Font Fix ===== */
+
+@media (max-width:768px){
+
+    .recipe-container ul li,
+    .recipe-container ol li{
+
+        font-size:22px !important;
+        line-height:1.9 !important;
+
+    }
 
 }
