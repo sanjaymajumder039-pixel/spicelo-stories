@@ -13,28 +13,22 @@ html {
 }
 
 body {
-
     margin: 0;
     padding: 0;
     background: #FAF3E0;
-    font-family: Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
     animation: fadeIn 0.8s ease-in;
-
-}
-html {
-    scroll-behavior: smooth;
 }
 
-body {
 
-    margin: 0;
-    padding: 0;
-    background: #FAF3E0;
-    font-family: Arial, sans-serif;
-    animation: fadeIn 0.8s ease-in;
+/* ==========================================================
+   02. TYPOGRAPHY
+   ========================================================== */
 
-}
 h1 {
+
     color: #d35400;
     text-align: center;
     letter-spacing: 2px;
@@ -73,7 +67,7 @@ button:hover {
 }
 
 /* ==========================================================
-   02. NAVBAR
+   03. NAVBAR
    ========================================================== */
 
     nav {
@@ -238,14 +232,6 @@ nav a:hover {
 
 }
 
-.food-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.food-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-}
  .recipe-info {
     display: flex;
     justify-content: space-around;
@@ -262,10 +248,6 @@ nav a:hover {
     font-size: 18px;
 }
 /* ===== Pizza Recipe Page ===== */
-
-body {
-    line-height: 1.8;
-}
 
 h1 {
     margin-bottom: 20px;
@@ -322,11 +304,8 @@ ol li {
     /* ==========================================================
    03. HERO SECTION
    ========================================================== */
-
-    .hero {
-        min-height: 450px;
-    }
 }
+
 
 /* ===== Premium Footer ===== */
 
@@ -380,9 +359,6 @@ ol li {
     transform: translateY(-2px);
 }
 
-.footer-links a:hover {
-    color: #f39c12;
-}
 
 /* ===== Premium Copyright ===== */
 
@@ -412,6 +388,7 @@ ol li {
 /* ===== Spicelo Stories Professional Hero ===== */
 
 .hero {
+    min-height: 450px;
     text-align: center;
     padding: 45px 20px 50px;
     background-color: #ffffff;
@@ -427,13 +404,100 @@ ol li {
     font-weight: 500;
 }
 
+/* ===== Cinematic Split Title ===== */
+
 .hero-intro h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 42px;
     margin: 0 0 8px;
     font-weight: 700;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    overflow: visible;
 }
 
+.spicelo-word,
+.stories-word {
+    display: inline-block;
+    opacity: 0;
+}
+
+.spicelo-word {
+    animation: spiceloEnter 1.4s ease-out 0.3s forwards;
+}
+
+.stories-word {
+    animation: storiesEnter 1.8s ease-out 0.45s forwards;
+}
+
+/* SPICELO — left se entry */
+
+@keyframes spiceloEnter {
+    0% {
+        opacity: 0;
+        transform: translateX(-100vw) scale(1.15);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(8px) scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* STORIES — right se slightly slower entry */
+
+@keyframes storiesEnter {
+    0% {
+        opacity: 0;
+        transform: translateX(100vw) scale(1.12);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(-6px) scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* ===== Cinematic Fly-In Title Reveal ===== */
+
+@keyframes spiceLoTitleReveal {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-120vw) scale(1.25);
+        letter-spacing: 12px;
+    }
+
+    55% {
+        opacity: 1;
+        transform: translateX(8px) scale(1.03);
+        letter-spacing: 3px;
+    }
+
+    75% {
+        transform: translateX(-3px) scale(1.01);
+        letter-spacing: 2px;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        letter-spacing: 1px;
+    }
+}
 .hero-intro p:last-child {
     font-size: 17px;
     margin: 0;
@@ -618,35 +682,7 @@ ol li {
         padding: 10px 20px;
         font-size: 15px;
     }
-}/* ===== Mobile Text Readability ===== */
 
-@media (max-width: 768px) {
-
-    nav a {
-        font-size: 16px;
-        padding: 8px 10px;
-    }
-
-    .hero-overlay h1 {
-        font-size: 42px;
-    }
-
-    .hero-overlay .tagline {
-        font-size: 23px;
-    }
-
-    .hero-overlay .hero-text {
-        font-size: 18px;
-        line-height: 1.6;
-    }
-
-    #about {
-        font-size: 30px;
-    }
-
-    #contact {
-        font-size: 32px;
-    }
 }/* ===== Mobile Readability Upgrade ===== */
 
 @media (max-width: 768px) {
@@ -673,6 +709,7 @@ ol li {
 
     h3 {
         font-size: 26px;
+
         line-height: 1.3;
     }
 
@@ -688,10 +725,7 @@ ol li {
         letter-spacing: 0.2px;
     }
 
-    .food-card p {
-        font-size: 17px;
-        line-height: 1.7;
-    }
+    
 }/* ===== Mobile Navbar Fix ===== */
 
 @media (max-width: 768px) {
@@ -709,13 +743,8 @@ ol li {
     }
 
 }
-/* ===== Spicelo Stories Professional Typography ===== */
 
-body {
-    font-family: "Inter", Arial, sans-serif;
-    font-size: 17px;
-    line-height: 1.7;
-}
+/* ===== Spicelo Stories Professional Typography ===== */
 
 h1,
 h2,
@@ -736,13 +765,13 @@ nav a,
 button {
     font-weight: 600;
 }
+
 h2 {
     font-size: 30px;
-}
-h2 {
     margin-top: 45px;
     margin-bottom: 20px;
 }
+
 .food-card h3 {
     font-size: 24px;
 }
@@ -775,15 +804,7 @@ button {
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
 }
-@media (max-width: 768px) {
-    .food-grid {
-        grid-template-columns: 1fr;
-    }
 
-    .hero {
-        min-height: 360px;
-    }
-}
 .recipes-cta {
     text-align: center;
     margin: 30px 0;
@@ -958,32 +979,30 @@ button {
     box-shadow: 0 15px 30px rgba(0,0,0,0.18);
 
 }
-/* ===== Universal Button Animation ===== */
+/* ===== Universal Button Animation — Polished ===== */
 
-button{
-
+button {
     background: linear-gradient(135deg, #d35400, #f39c12);
     color: white;
     font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 
-    transition: all .3s ease;
-
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
 }
 
-button:hover{
-
+button:hover {
     transform: translateY(-3px);
-
-    box-shadow: 0 10px 20px rgba(0,0,0,.20);
-
-    filter: brightness(1.08);
-
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    filter: brightness(1.06);
 }
 
-button:active{
-
-    transform: scale(.96);
-
+button:active {
+    transform: translateY(0) scale(0.97);
 }
 /* ===== Scroll Reveal ===== */
 
@@ -1063,4 +1082,62 @@ section p{
 
     }
 
+}
+/* ===== Mobile Cinematic Title Fix ===== */
+
+@media (max-width: 768px) {
+
+    .hero-intro h1 {
+        font-size: 32px;
+        gap: 6px;
+        white-space: nowrap;
+    }
+
+    .spicelo-word {
+        animation: spiceloEnterMobile 1.4s ease-out 0.3s forwards;
+    }
+
+    .stories-word {
+        animation: storiesEnterMobile 1.8s ease-out 0.45s forwards;
+    }
+}
+
+/* Mobile SPICELO — controlled left entry */
+
+@keyframes spiceloEnterMobile {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-55vw) scale(1.08);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(5px) scale(1.01);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* Mobile STORIES — controlled right entry */
+
+@keyframes storiesEnterMobile {
+
+    0% {
+        opacity: 0;
+        transform: translateX(55vw) scale(1.06);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(-4px) scale(1.01);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
 }
