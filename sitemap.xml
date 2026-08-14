@@ -2,4 +2,28 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+    <url>
+        <loc>https://spicelostories.com/</loc>
+    </url>
+
+    <url>
+        <loc>https://spicelostories.com/pizza.html</loc>
+    </url>
+
+    <url>
+        <loc>https://spicelostories.com/burger.html</loc>
+    </url>
+
+    <url>
+        <loc>https://spicelostories.com/biryani.html</loc>
+    </url>
+
+    <url>
+        <loc>https://spicelostories.com/noodles.html</loc>
+    </url>
+
+    <url>
+        <loc>https://spicelostories.com/cake.html</loc>
+    </url>
+
 </urlset>
