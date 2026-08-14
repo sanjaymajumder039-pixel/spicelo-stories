@@ -37,3 +37,26 @@ recipeSearch.addEventListener("input", () => {
     });
 
 });
+const filterButtons = document.querySelectorAll(".recipe-filters button");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const selectedCategory = button.dataset.filter;
+
+        recipeCards.forEach(card => {
+
+            const cardCategory = card.dataset.category;
+
+            if (selectedCategory === "all" || cardCategory === selectedCategory) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+});

@@ -1288,3 +1288,29 @@ section p{
     border-color: #d35400;
     box-shadow: 0 0 10px rgba(211, 84, 0, 0.15);
 }
+/* Recipe Category Filters */
+.recipe-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto 35px;
+}
+
+.recipe-filters button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #f3f3f3;
+    color: #333;
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.recipe-filters button:hover {
+    background: #d35400;
+    color: #ffffff;
+}

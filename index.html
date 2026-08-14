@@ -92,8 +92,15 @@
         aria-label="Search recipes"
     >
 </div>
+<div class="recipe-filters">
+    <button type="button" data-filter="all">All</button>
+    <button type="button" data-filter="Indian">Indian</button>
+    <button type="button" data-filter="Italian">Italian</button>
+    <button type="button" data-filter="Fast Food">Fast Food</button>
+    <button type="button" data-filter="Desserts">Desserts</button>
+</div>
 <div class="food-grid reveal">
-<div class="food-card">
+<div class="food-card" data-category="Italian">
     <img src="images/pizza.png" alt="Pizza">
     
     <h3>🍕 Pizza</h3>
@@ -101,14 +108,14 @@
     <button onclick="window.location.href='pizza.html'">View Recipe</button>
 </div>
 
-<div class="food-card">
+<div class="food-card" data-category="Fast Food">
     <img src="images/burger.png" alt="Burger">
     <h3>🍔 Burger</h3>
     <p>Juicy burger with fresh vegetables and cheese.</p>
     <button onclick="window.location.href='burger.html'">View Recipe</button>
 </div>
 
-<div class="food-card">
+<div class="food-card" data-category="Indian">
     <img src="images/biryani.jpg" alt="Chicken Biryani">
     <h3>🍗 Chicken Biryani</h3>
     <p>Authentic Indian biryani with aromatic spices.</p>
@@ -117,7 +124,7 @@
 </button>
 </div>
 
-<div class="food-card">
+<div class="food-card" data-category="Fast Food">
     <img src="images/noodles.png" alt="Noodles">
     <h3>🍜 Noodles</h3>
     <p>Delicious noodles tossed with fresh vegetables.</p>
@@ -126,7 +133,7 @@
 </button>
 </div>
 
-<div class="food-card">
+<div class="food-card" data-category="Desserts">
 
     <img src="images/cake.png" alt="Cake">
     <h3>🍰 Cake</h3>
