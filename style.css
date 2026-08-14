@@ -1265,3 +1265,26 @@ section p{
     }
 
 }
+/* Recipe Search */
+.recipe-search {
+    max-width: 500px;
+    margin: 20px auto 35px;
+    text-align: center;
+}
+
+.recipe-search input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 17px;
+    font-family: inherit;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+
+.recipe-search input:focus {
+    border-color: #d35400;
+    box-shadow: 0 0 10px rgba(211, 84, 0, 0.15);
+}
