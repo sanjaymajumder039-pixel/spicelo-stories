@@ -7,7 +7,9 @@
 /* ==========================================================
    01. GLOBAL STYLES
    ========================================================== */
-
+* {
+    box-sizing: border-box;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -739,7 +741,7 @@ ol li {
 
     nav a {
         margin: 0;
-        padding: 6px 7px;
+        padding: 6px 4px;
         font-size: 14px;
     }
 
@@ -1107,8 +1109,8 @@ section p{
 @media (max-width: 768px) {
 
     .hero-intro h1 {
-        font-size: 32px;
-        gap: 6px;
+        font-size: 27px;
+        gap: 4px;
         white-space: nowrap;
     }
 
@@ -1313,4 +1315,402 @@ section p{
 .recipe-filters button:hover {
     background: #d35400;
     color: #ffffff;
+}
+/* ==========================================================
+   JHAL MURI RECIPE PAGE
+   ========================================================== */
+
+.recipe-page {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.recipe-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.recipe-label {
+    color: #e67e22;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.recipe-header h1 {
+    color: #d35400;
+    font-size: 48px;
+    margin: 0 0 15px;
+}
+
+.recipe-intro {
+    max-width: 700px;
+    margin: auto;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.recipe-image-section {
+    margin: 30px 0 45px;
+}
+
+.recipe-image-placeholder {
+    min-height: 320px;
+    border-radius: 18px;
+    background: #f7f1eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #777;
+}
+
+.recipe-image-placeholder p {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.recipe-image-placeholder span {
+    font-size: 15px;
+}
+
+.recipe-page section {
+    margin-bottom: 45px;
+}
+
+.recipe-page h2 {
+    color: #d35400;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.recipe-page p,
+.recipe-page li {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.recipe-story p {
+    margin-bottom: 15px;
+}
+
+.recipe-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.recipe-info div {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.recipe-info h3 {
+    color: #d35400;
+    margin-bottom: 8px;
+}
+
+.recipe-info p {
+    margin: 0;
+}
+
+.recipe-ingredients ul,
+.recipe-method ol {
+    padding-left: 25px;
+}
+
+.recipe-note {
+    background: #fff8f0;
+    padding: 25px;
+    border-radius: 16px;
+}
+
+.recipe-note p {
+    margin: 0;
+}
+
+.recipe-back {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.recipe-back a {
+    display: inline-block;
+    background: #e67e22;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.recipe-back a:hover {
+    background: #d35400;
+}
+
+
+/* ===== Mobile Recipe Page ===== */
+
+@media (max-width: 768px) {
+
+    .recipe-page {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    .recipe-header h1 {
+        font-size: 36px;
+    }
+
+    .recipe-intro {
+        font-size: 16px;
+    }
+
+    .recipe-image-placeholder {
+        min-height: 240px;
+    }
+
+    .recipe-page h2 {
+        font-size: 25px;
+    }
+
+    .recipe-page p,
+    .recipe-page li {
+        font-size: 16px;
+    }
+
+    .recipe-info {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+/* Jhal Muri - Main Recipe Photo */
+.recipe-main-image {
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    height: 430px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+@media (max-width: 768px) {
+    .recipe-main-image {
+        width: 100%;
+        height: 280px;
+        border-radius: 14px;
+    }
+}
+/* Jhal Muri - Better Page Spacing */
+
+.recipe-image-section {
+    margin: 25px auto 30px;
+    padding: 0;
+}
+
+.recipe-info {
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.recipe-main-image {
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    height: 430px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 768px) {
+    .recipe-image-section {
+        margin: 20px auto 25px;
+    }
+
+    .recipe-main-image {
+        width: 100%;
+        height: 280px;
+        border-radius: 14px;
+    }
+
+    .recipe-info {
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+}
+/* =========================================
+   Jhal Muri Page - Professional Spacing
+   ========================================= */
+
+.recipe-page {
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+
+.recipe-page section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/* Intro / description */
+.recipe-page > p {
+    margin: 10px auto 25px;
+}
+
+/* Main food photo */
+.recipe-image-section {
+    margin: 20px auto 25px;
+    padding: 0;
+}
+
+.recipe-main-image {
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    height: 430px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Story */
+.recipe-story {
+    margin: 25px auto;
+    padding: 0;
+}
+
+.recipe-story p {
+    margin: 10px auto;
+}
+
+/* Info cards */
+.recipe-info {
+    margin: 25px auto;
+}
+
+/* Ingredients */
+.recipe-ingredients,
+.recipe-page section[class*="ingredients"] {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.recipe-ingredients ul,
+.recipe-page section[class*="ingredients"] ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* How to Make */
+.recipe-page h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Lists */
+.recipe-page li {
+    margin-bottom: 8px;
+}
+
+/* Food note */
+.recipe-page section:last-of-type {
+    margin-bottom: 25px;
+}
+
+/* Footer */
+footer {
+    margin-top: 25px;
+    padding: 18px 10px;
+    text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .recipe-page {
+        padding-top: 18px;
+        padding-bottom: 20px;
+    }
+
+    .recipe-page section {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .recipe-image-section {
+        margin: 15px auto 20px;
+    }
+
+    .recipe-main-image {
+        height: 280px;
+        border-radius: 14px;
+    }
+
+    .recipe-story {
+        margin: 20px auto;
+    }
+
+    .recipe-info {
+        margin: 20px auto;
+    }
+
+    .recipe-page h2 {
+        margin-top: 25px;
+        margin-bottom: 12px;
+    }
+
+    .recipe-page li {
+        margin-bottom: 6px;
+    }
+
+    footer {
+        margin-top: 20px;
+        padding: 15px 8px;
+    }
+}
+/* Jhal Muri - Ingredients & Method spacing */
+
+.recipe-ingredients {
+    max-width: 900px;
+    margin: 35px auto 45px;
+    padding: 0 30px;
+}
+
+.recipe-method {
+    max-width: 900px;
+    margin: 45px auto 45px;
+    padding: 0 30px;
+}
+
+.recipe-ingredients h2,
+.recipe-method h2 {
+    margin-bottom: 22px;
+}
+
+.recipe-ingredients ul,
+.recipe-method ol {
+    margin-top: 0;
+    padding-left: 30px;
+}
+
+.recipe-ingredients li,
+.recipe-method li {
+    margin-bottom: 14px;
+    line-height: 1.6;
 }
