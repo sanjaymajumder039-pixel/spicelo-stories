@@ -1714,3 +1714,25 @@ footer {
     margin-bottom: 14px;
     line-height: 1.6;
 }
+/* Mobile Ingredients & Method */
+
+@media (max-width: 600px) {
+
+    .recipe-ingredients,
+    .recipe-method {
+        padding: 0 15px;
+    }
+
+    .recipe-ingredients ul,
+    .recipe-method ol {
+        padding-left: 22px;
+    }
+
+    .recipe-ingredients li,
+    .recipe-method li {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+}
