@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body data-recipe-slug="pizza">
 
 <div class="recipe-container">
 
@@ -40,11 +40,61 @@
         <li>Bake for 15 minutes.</li>
         <li>Serve hot.</li>
     </ol>
+    
+<!-- Like & Comments -->
+<section class="recipe-engagement">
+
+    <div class="recipe-like">
+        <button type="button" id="likeButton">
+            ❤️ Like this recipe
+        </button>
+
+        <span id="likeCount">0 Likes</span>
+    </div>
+
+    <div class="recipe-comments">
+
+        <h2>💬 Comments</h2>
+
+        <form id="commentForm">
+
+            <input
+                type="text"
+                id="commentName"
+                placeholder="Your name"
+                maxlength="50"
+                required
+            >
+
+            <textarea
+                id="commentText"
+                placeholder="Write your comment..."
+                maxlength="500"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Post Comment
+            </button>
+
+        </form>
+
+        <div id="commentMessage"></div>
+
+        <div id="commentsList">
+            <!-- Comments will appear here -->
+        </div>
+
+    </div>
+
+</section>
 
     <button onclick="window.location.href='index.html'">
         ⬅ Back to Home
     </button>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
 </body>
 </html>

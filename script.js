@@ -98,7 +98,7 @@ if (
     commentsList
 ) {
 
-    const recipeSlug = "jhal-muri";
+    const recipeSlug = document.body.dataset.recipeSlug;
 
     let visitorId = localStorage.getItem("spiceloVisitorId");
 
