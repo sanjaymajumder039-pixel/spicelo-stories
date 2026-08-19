@@ -20,23 +20,28 @@ window.addEventListener("scroll", () => {
 const recipeSearch = document.getElementById("recipeSearch");
 const recipeCards = document.querySelectorAll(".food-card");
 
-recipeSearch.addEventListener("input", () => {
+if (recipeSearch) {
 
-    const searchTerm = recipeSearch.value.toLowerCase().trim();
+    recipeSearch.addEventListener("input", () => {
 
-    recipeCards.forEach(card => {
+        const searchTerm = recipeSearch.value.toLowerCase().trim();
 
-        const recipeName = card.querySelector("h3").textContent.toLowerCase();
+        recipeCards.forEach(card => {
 
-        if (recipeName.includes(searchTerm)) {
-            card.style.display = "";
-        } else {
-            card.style.display = "none";
-        }
+            const recipeName =
+                card.querySelector("h3").textContent.toLowerCase();
+
+            if (recipeName.includes(searchTerm)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
 
     });
 
-});
+}
 const filterButtons = document.querySelectorAll(".recipe-filters button");
 
 filterButtons.forEach(button => {
@@ -60,3 +65,231 @@ filterButtons.forEach(button => {
     });
 
 });
+/* =========================================
+   SPICELO STORIES — SUPABASE
+   JHAL MURI LIKE & COMMENTS
+========================================= */
+
+const SUPABASE_URL = "https://uqqhkzhuexememvzdslw.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_EEoU5ndnSgZ7ADOXBg5Qxg_1NoT86r5";
+
+const { createClient } = window.supabase;
+
+const supabaseClient = createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+);
+
+
+/* =========================================
+   RUN ONLY ON RECIPE ENGAGEMENT PAGES
+========================================= */
+
+const likeButton = document.getElementById("likeButton");
+const likeCount = document.getElementById("likeCount");
+const commentForm = document.getElementById("commentForm");
+const commentsList = document.getElementById("commentsList");
+const commentMessage = document.getElementById("commentMessage");
+
+if (
+    likeButton &&
+    likeCount &&
+    commentForm &&
+    commentsList
+) {
+
+    const recipeSlug = "jhal-muri";
+
+    let visitorId = localStorage.getItem("spiceloVisitorId");
+
+    if (!visitorId) {
+        visitorId =
+            crypto.randomUUID
+                ? crypto.randomUUID()
+                : "visitor-" + Date.now() + "-" + Math.random();
+
+        localStorage.setItem("spiceloVisitorId", visitorId);
+    }
+
+
+    /* =========================================
+       LOAD LIKE COUNT
+    ========================================= */
+
+    async function loadLikeCount() {
+
+        const { count, error } = await supabaseClient
+            .from("likes")
+            .select("*", {
+                count: "exact",
+                head: true
+            })
+            .eq("recipe_slug", recipeSlug);
+
+        if (error) {
+            console.error("Like count error:", error);
+            return;
+        }
+
+        likeCount.textContent = `${count || 0} Likes`;
+    }
+
+
+    /* =========================================
+       LIKE RECIPE
+    ========================================= */
+
+    likeButton.addEventListener("click", async () => {
+
+        likeButton.disabled = true;
+
+        const { error } = await supabaseClient
+            .from("likes")
+            .insert({
+                recipe_slug: recipeSlug,
+                visitor_id: visitorId
+            });
+
+        if (error) {
+
+            if (error.code === "23505") {
+                likeButton.textContent = "❤️ Already Liked";
+            } else {
+                console.error("Like error:", error);
+                likeButton.textContent = "Try Again";
+                likeButton.disabled = false;
+                return;
+            }
+
+        } else {
+
+            likeButton.textContent = "❤️ Liked";
+
+        }
+
+        await loadLikeCount();
+    });
+
+
+    /* =========================================
+       LOAD COMMENTS
+    ========================================= */
+
+    async function loadComments() {
+
+        const { data, error } = await supabaseClient
+            .from("comments")
+            .select("id, name, comment, created_at")
+            .eq("recipe_slug", recipeSlug)
+            .order("created_at", {
+                ascending: false
+            });
+
+        if (error) {
+            console.error("Comments loading error:", error);
+            return;
+        }
+
+        commentsList.innerHTML = "";
+
+        if (!data || data.length === 0) {
+
+            commentsList.innerHTML =
+                "<p>No comments yet. Be the first to comment!</p>";
+
+            return;
+        }
+
+
+        data.forEach(item => {
+
+            const commentItem = document.createElement("div");
+
+            commentItem.className = "comment-item";
+
+            const name = document.createElement("strong");
+            name.textContent = item.name;
+
+            const text = document.createElement("p");
+            text.textContent = item.comment;
+
+            commentItem.appendChild(name);
+            commentItem.appendChild(text);
+
+            commentsList.appendChild(commentItem);
+        });
+    }
+
+
+    /* =========================================
+       POST COMMENT
+    ========================================= */
+
+    commentForm.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        const nameInput =
+            document.getElementById("commentName");
+
+        const textInput =
+            document.getElementById("commentText");
+
+        const name = nameInput.value.trim();
+        const comment = textInput.value.trim();
+
+
+        if (!name || !comment) {
+            return;
+        }
+
+
+        const submitButton =
+            commentForm.querySelector("button[type='submit']");
+
+        submitButton.disabled = true;
+
+        commentMessage.textContent = "Posting comment...";
+
+
+        const { error } = await supabaseClient
+            .from("comments")
+            .insert({
+                recipe_slug: recipeSlug,
+                name: name,
+                comment: comment
+            });
+
+
+        if (error) {
+
+            console.error("Comment error:", error);
+
+            commentMessage.textContent =
+                "Sorry, comment could not be posted.";
+
+            submitButton.disabled = false;
+
+            return;
+        }
+
+
+        commentForm.reset();
+
+        commentMessage.textContent =
+            "Comment posted successfully!";
+
+        submitButton.disabled = false;
+
+        await loadComments();
+    });
+
+
+    /* =========================================
+       INITIAL LOAD
+    ========================================= */
+
+    loadLikeCount();
+    loadComments();
+
+}

@@ -1943,3 +1943,147 @@ footer {
         line-height: 1.6;
     }
 }
+/* =========================================
+   RECIPE ENGAGEMENT — LIKE & COMMENTS
+========================================= */
+
+.recipe-engagement {
+    width: 100%;
+    max-width: 850px;
+    margin: 50px auto 35px;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+}
+
+.recipe-like {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+#likeButton {
+    border: none;
+    border-radius: 10px;
+    padding: 11px 18px;
+    background: #d97706;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#likeButton:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+#likeCount {
+    font-size: 14px;
+    color: #555555;
+}
+
+.recipe-comments h2 {
+    margin: 0 0 20px;
+}
+
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#commentName,
+#commentText {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+}
+
+#commentText {
+    min-height: 110px;
+    resize: vertical;
+}
+
+#commentName:focus,
+#commentText:focus {
+    border-color: #d97706;
+}
+
+#commentForm button {
+    align-self: flex-start;
+    border: none;
+    border-radius: 10px;
+    padding: 11px 18px;
+    background: #222222;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#commentForm button:hover {
+    opacity: 0.9;
+}
+
+#commentMessage {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+#commentsList {
+    margin-top: 25px;
+}
+
+.comment-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.comment-item strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.comment-item p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .recipe-engagement {
+        margin: 35px 15px 25px;
+        padding: 22px;
+        width: auto;
+        border-radius: 16px;
+    }
+
+    .recipe-like {
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+    }
+
+    #likeButton {
+        width: 100%;
+    }
+
+    #commentForm button {
+        width: 100%;
+    }
+
+}
