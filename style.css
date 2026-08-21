@@ -2236,3 +2236,197 @@ footer {
     }
 
 }
+/* =========================================
+   SPICELO STORIES — MORNING ATMOSPHERE
+========================================= */
+
+.time-atmosphere.morning {
+    z-index: 1;
+}
+
+
+
+
+/* 🐦 Flying birds */
+
+.time-atmosphere.morning .bird {
+    position: absolute;
+    font-size: 25px;
+    z-index: 3;
+    white-space: nowrap;
+}
+
+
+/* 🐦 Bird 1 */
+
+.time-atmosphere.morning .bird-one {
+    top: 70px;
+    left: -50px;
+    animation: morningBirdOne 14s linear infinite;
+}
+
+
+/* 🐦 Bird 2 */
+
+.time-atmosphere.morning .bird-two {
+    top: 115px;
+    left: -80px;
+    animation: morningBirdTwo 18s linear infinite 4s;
+}
+
+
+/* 🦋 Butterfly */
+
+.time-atmosphere.morning .butterfly-one {
+    position: absolute;
+    bottom: 55px;
+    left: 15%;
+    font-size: 22px;
+    z-index: 3;
+
+    animation: morningButterfly 6s ease-in-out infinite;
+}
+
+
+/* =========================================
+   MORNING ANIMATIONS
+========================================= */
+
+
+/* 🐦 Bird 1 — LEFT → RIGHT */
+
+@keyframes morningBirdOne {
+
+    0% {
+        left: -50px;
+        transform: translateY(0) scaleX(-1) scale(0.9);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    35% {
+        transform: translateY(-15px) scaleX(-1) scale(1);
+    }
+
+    60% {
+        transform: translateY(8px) scaleX(-1) scale(1);
+    }
+
+    92% {
+        opacity: 1;
+    }
+
+    100% {
+        left: calc(100% + 50px);
+        transform: translateY(-5px) scaleX(-1) scale(0.9);
+        opacity: 0;
+    }
+}
+
+
+/* 🐦 Bird 2 — LEFT → RIGHT */
+
+@keyframes morningBirdTwo {
+
+    0% {
+        left: -80px;
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0.9;
+    }
+
+    40% {
+        transform: translateY(18px) scale(0.95);
+    }
+
+    70% {
+        transform: translateY(-10px) scale(1);
+    }
+
+    92% {
+        opacity: 0.9;
+    }
+
+    100% {
+        left: calc(100% + 80px);
+        transform: translateY(5px) scale(0.8);
+        opacity: 0;
+    }
+}
+
+
+/* 🌅 Gentle sunrise glow */
+
+@keyframes morningSun {
+
+    0% {
+        transform: scale(1);
+        opacity: 0.82;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.82;
+    }
+}
+
+
+/* 🦋 Gentle butterfly movement */
+
+@keyframes morningButterfly {
+
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(12px, -10px) rotate(4deg);
+    }
+
+    50% {
+        transform: translate(25px, 5px) rotate(-3deg);
+    }
+
+    75% {
+        transform: translate(12px, -8px) rotate(3deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .time-atmosphere.morning .sun {
+        width: 48px;
+        height: 48px;
+        top: 35px;
+        right: 8%;
+    }
+
+    .time-atmosphere.morning .bird {
+        font-size: 20px;
+    }
+
+    .time-atmosphere.morning .butterfly-one {
+        font-size: 18px;
+    }
+
+}

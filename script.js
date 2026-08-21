@@ -330,8 +330,6 @@ function updateTimeGreeting() {
         atmosphere.innerHTML = `
             <span class="bird bird-one">🐦</span>
             <span class="bird bird-two">🐦</span>
-            <span class="sun">🌅</span>
-            <span class="butterfly butterfly-one">🦋</span>
         `;
     }
 
@@ -345,10 +343,9 @@ function updateTimeGreeting() {
         atmosphere.className = "time-atmosphere afternoon";
 
         atmosphere.innerHTML = `
-            <span class="sun">☀️</span>
-            <span class="butterfly butterfly-one">🦋</span>
-            <span class="butterfly butterfly-two">🦋</span>
-            <span class="leaf">🌿</span>
+            
+            
+           
         `;
     }
 
@@ -365,7 +362,7 @@ function updateTimeGreeting() {
             <span class="sunset">🌆</span>
             <span class="bird bird-one">🐦</span>
             <span class="bird bird-two">🐦</span>
-            <span class="leaf">🍃</span>
+            
         `;
     }
 
