@@ -73,12 +73,18 @@ filterButtons.forEach(button => {
 const SUPABASE_URL = "https://uqqhkzhuexememvzdslw.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_EEoU5ndnSgZ7ADOXBg5Qxg_1NoT86r5";
 
-const { createClient } = window.supabase;
+let supabaseClient = null;
 
-const supabaseClient = createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-);
+if (window.supabase) {
+
+    const { createClient } = window.supabase;
+
+    supabaseClient = createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+
+}
 
 
 /* =========================================
@@ -293,3 +299,92 @@ if (
     loadComments();
 
 }
+/* =========================================
+   SpiceLo Stories — Dynamic Time Atmosphere
+========================================= */
+
+function updateTimeGreeting() {
+
+    const greetingTitle = document.getElementById("greetingTitle");
+    const greetingMessage = document.getElementById("greetingMessage");
+    const atmosphere = document.getElementById("timeAtmosphere");
+
+    if (!greetingTitle || !greetingMessage || !atmosphere) {
+        return;
+    }
+
+    const hour = new Date().getHours();
+
+    /* Clear previous atmosphere */
+    atmosphere.innerHTML = "";
+
+    /* 🌅 MORNING */
+    if (hour >= 5 && hour < 12) {
+
+        greetingTitle.textContent = "🌅 Good Morning! 🐦";
+        greetingMessage.textContent =
+            "A fresh day, a fresh story.";
+
+        atmosphere.className = "time-atmosphere morning";
+
+        atmosphere.innerHTML = `
+            <span class="bird bird-one">🐦</span>
+            <span class="bird bird-two">🐦</span>
+            <span class="sun">🌅</span>
+            <span class="butterfly butterfly-one">🦋</span>
+        `;
+    }
+
+    /* ☀️ AFTERNOON */
+    else if (hour >= 12 && hour < 17) {
+
+        greetingTitle.textContent = "☀️ Good Afternoon! 🦋";
+        greetingMessage.textContent =
+            "What are we cooking today? 🍳";
+
+        atmosphere.className = "time-atmosphere afternoon";
+
+        atmosphere.innerHTML = `
+            <span class="sun">☀️</span>
+            <span class="butterfly butterfly-one">🦋</span>
+            <span class="butterfly butterfly-two">🦋</span>
+            <span class="leaf">🌿</span>
+        `;
+    }
+
+    /* 🌆 EVENING */
+    else if (hour >= 17 && hour < 21) {
+
+        greetingTitle.textContent = "🌆 Good Evening! 🐦";
+        greetingMessage.textContent =
+            "Slow down, relax, and enjoy a delicious story.";
+
+        atmosphere.className = "time-atmosphere evening";
+
+        atmosphere.innerHTML = `
+            <span class="sunset">🌆</span>
+            <span class="bird bird-one">🐦</span>
+            <span class="bird bird-two">🐦</span>
+            <span class="leaf">🍃</span>
+        `;
+    }
+
+    /* 🌙 NIGHT */
+    else {
+
+        greetingTitle.textContent = "🌙 Good Night! ✨";
+        greetingMessage.textContent =
+            "Cozy moments, delicious stories.";
+
+        atmosphere.className = "time-atmosphere night";
+
+        atmosphere.innerHTML = `
+            <span class="moon">🌙</span>
+            <span class="star star-one">✨</span>
+            <span class="star star-two">⭐</span>
+            <span class="star star-three">✨</span>
+        `;
+    }
+}
+
+updateTimeGreeting();
