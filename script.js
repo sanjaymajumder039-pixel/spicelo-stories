@@ -17,52 +17,176 @@ window.addEventListener("scroll", () => {
     });
 
 });
+/* =========================================
+   SPICELO STORIES — RECIPE DISCOVERY
+   Search + Category Filter
+========================================= */
+
 const recipeSearch = document.getElementById("recipeSearch");
 const recipeCards = document.querySelectorAll(".food-card");
+const filterButtons = document.querySelectorAll(".recipe-filters button");
 
-if (recipeSearch) {
+let selectedCategory = "all";
 
-    recipeSearch.addEventListener("input", () => {
 
-        const searchTerm = recipeSearch.value.toLowerCase().trim();
+function filterRecipes() {
 
-        recipeCards.forEach(card => {
+    const searchTerm = recipeSearch
+        ? recipeSearch.value.toLowerCase().trim()
+        : "";
 
-            const recipeName =
-                card.querySelector("h3").textContent.toLowerCase();
+    let visibleCount = 0;
 
-            if (recipeName.includes(searchTerm)) {
-                card.style.display = "";
-            } else {
-                card.style.display = "none";
-            }
+    recipeCards.forEach(card => {
 
-        });
+        const recipeName =
+            card.querySelector("h3")?.textContent.toLowerCase() || "";
+
+        const recipeDescription =
+            card.querySelector("p")?.textContent.toLowerCase() || "";
+
+        const cardCategory =
+            card.dataset.category || "";
+
+        const matchesSearch =
+            recipeName.includes(searchTerm) ||
+            recipeDescription.includes(searchTerm);
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            cardCategory === selectedCategory;
+
+        if (matchesSearch && matchesCategory) {
+
+            card.style.display = "";
+            visibleCount++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
 
     });
 
+
+    updateRecipeResultMessage(visibleCount);
 }
-const filterButtons = document.querySelectorAll(".recipe-filters button");
+
+
+function updateRecipeResultMessage(count) {
+
+    let resultMessage =
+        document.getElementById("recipeResultMessage");
+
+    if (!resultMessage) {
+
+        resultMessage = document.createElement("p");
+
+        resultMessage.id = "recipeResultMessage";
+
+        resultMessage.setAttribute(
+            "aria-live",
+            "polite"
+        );
+
+        const foodGrid =
+            document.querySelector(".food-grid");
+
+        if (foodGrid) {
+            foodGrid.parentNode.insertBefore(
+                resultMessage,
+                foodGrid
+            );
+        }
+
+    }
+
+    const hasSearch =
+        recipeSearch &&
+        recipeSearch.value.trim() !== "";
+
+    const hasFilter =
+        selectedCategory !== "all";
+
+
+    if (!hasSearch && !hasFilter) {
+
+        resultMessage.textContent = "";
+
+        return;
+    }
+
+
+    if (count === 0) {
+
+        resultMessage.textContent =
+            "🍽️ No recipes found. Try another search or category.";
+
+    } else if (count === 1) {
+
+        resultMessage.textContent =
+            "🍽️ 1 recipe found";
+
+    } else {
+
+        resultMessage.textContent =
+            `🍽️ ${count} recipes found`;
+
+    }
+
+}
+
+
+/* ===== Search ===== */
+
+if (recipeSearch) {
+
+    recipeSearch.addEventListener(
+        "input",
+        filterRecipes
+    );
+
+}
+
+
+/* ===== Category Filters ===== */
 
 filterButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        const selectedCategory = button.dataset.filter;
+        selectedCategory =
+            button.dataset.filter || "all";
 
-        recipeCards.forEach(card => {
 
-            const cardCategory = card.dataset.category;
+        /* Active button */
 
-            if (selectedCategory === "all" || cardCategory === selectedCategory) {
-                card.style.display = "";
-            } else {
-                card.style.display = "none";
-            }
+        filterButtons.forEach(item => {
+
+            item.classList.remove("active");
 
         });
 
+        button.classList.add("active");
+
+
+        filterRecipes();
+
     });
+
+});
+
+
+/* ===== Initial State ===== */
+
+filterButtons.forEach(button => {
+
+    if (button.dataset.filter === "all") {
+
+        button.classList.add("active");
+
+    }
 
 });
 /* =========================================
