@@ -2430,3 +2430,472 @@ footer {
     }
 
 }
+/* ==========================================================
+   SPICELO STORIES — WORLD CLASS HOMEPAGE POLISH
+   Phase 1
+   ========================================================== */
+
+/* ===== Premium Page Background ===== */
+
+body {
+    background:
+        radial-gradient(circle at 10% 10%, rgba(243, 156, 18, 0.08), transparent 25%),
+        radial-gradient(circle at 90% 30%, rgba(211, 84, 0, 0.06), transparent 25%),
+        #faf3e0;
+}
+
+
+/* ===== Premium Navigation ===== */
+
+nav {
+    background: rgba(44, 62, 80, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+    bottom: 2px;
+
+    height: 2px;
+
+    background: #f39c12;
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* ===== Premium Hero ===== */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 255, 255, 0.95),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #fffaf5 0%,
+            #ffe8cc 50%,
+            #fff4e6 100%
+        );
+
+    box-shadow:
+        0 18px 50px rgba(211, 84, 0, 0.10);
+
+    border: 1px solid rgba(211, 84, 0, 0.08);
+}
+
+
+/* ===== Logo Premium Glow ===== */
+
+.spicelo-logo {
+    box-shadow:
+        0 12px 35px rgba(211, 84, 0, 0.20),
+        0 0 0 8px rgba(255, 255, 255, 0.75);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.spicelo-logo:hover {
+    transform: scale(1.04);
+
+    box-shadow:
+        0 16px 40px rgba(211, 84, 0, 0.25),
+        0 0 0 10px rgba(243, 156, 18, 0.08);
+}
+
+
+/* ===== Hero Banner Premium ===== */
+
+.hero-banner {
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.hero-banner:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 24px 55px rgba(0, 0, 0, 0.22);
+}
+
+.hero-banner::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.08),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ===== Recipe Section ===== */
+
+#recipes {
+    position: relative;
+
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#recipes::after {
+    content: "";
+
+    display: block;
+
+    width: 60px;
+    height: 4px;
+
+    margin: 14px auto 0;
+
+    background: linear-gradient(
+        90deg,
+        #d35400,
+        #f39c12
+    );
+
+    border-radius: 10px;
+}
+
+
+/* ===== Premium Search Box ===== */
+
+.recipe-search {
+    max-width: 620px;
+    margin: 30px auto 25px;
+    padding: 0 20px;
+}
+
+.recipe-search input {
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 2px solid rgba(211, 84, 0, 0.12);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.07);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.recipe-search input:hover {
+    transform: translateY(-1px);
+}
+
+.recipe-search input:focus {
+    border-color: #d35400;
+
+    box-shadow:
+        0 10px 30px rgba(211, 84, 0, 0.15);
+}
+
+
+/* ===== Premium Category Filters ===== */
+
+.recipe-filters button {
+    border: 1px solid rgba(211, 84, 0, 0.10);
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.recipe-filters button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px rgba(211, 84, 0, 0.16);
+}
+
+
+/* ===== Premium Recipe Cards ===== */
+
+.food-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #fffaf5 100%
+        );
+
+    border: 1px solid rgba(211, 84, 0, 0.08);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(243, 156, 18, 0.35);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.14);
+}
+
+.food-card img {
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.food-card h3 {
+    transition: color 0.3s ease;
+}
+
+.food-card:hover h3 {
+    color: #e67e22;
+}
+
+
+/* ===== Premium Recipe Button ===== */
+
+.food-card button {
+    min-width: 145px;
+
+    box-shadow:
+        0 6px 15px rgba(211, 84, 0, 0.18);
+}
+
+.food-card button:hover {
+    box-shadow:
+        0 10px 22px rgba(211, 84, 0, 0.28);
+}
+
+
+/* ===== About Premium ===== */
+
+.about {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff8f0
+        );
+
+    border-top:
+        1px solid rgba(211, 84, 0, 0.05);
+
+    border-bottom:
+        1px solid rgba(211, 84, 0, 0.05);
+}
+
+
+/* ===== Creator Premium ===== */
+
+.creator-content {
+    border:
+        1px solid rgba(211, 84, 0, 0.08);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.creator-content:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.14);
+}
+
+.creator-image img {
+    transition:
+        transform 0.5s ease;
+}
+
+.creator-image img:hover {
+    transform: scale(1.02);
+}
+
+
+/* ===== Contact Premium ===== */
+
+.contact {
+    background:
+        linear-gradient(
+            135deg,
+            #fff8f0,
+            #fff1df
+        );
+}
+
+.contact-info {
+    border:
+        1px solid rgba(211, 84, 0, 0.08);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ===== Premium Footer ===== */
+
+.footer {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(243, 156, 18, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #17212b,
+            #2c3e50
+        );
+
+    border-radius: 28px 28px 0 0;
+}
+
+
+/* ===== Smooth Interactive Elements ===== */
+
+button,
+a,
+.food-card,
+.recipe-search input,
+.recipe-filters button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ===== Accessibility: Reduced Motion ===== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* ===== Premium Mobile Polish ===== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        margin: 0;
+        padding: 35px 15px 25px;
+
+        box-shadow:
+            0 10px 30px rgba(211, 84, 0, 0.08);
+    }
+
+    .hero-banner {
+        min-height: 360px;
+
+        border-radius: 16px;
+    }
+
+    .recipe-search {
+        padding: 0 15px;
+    }
+
+    .recipe-filters {
+        padding: 0 12px;
+    }
+
+    .recipe-filters button {
+        padding: 9px 16px;
+        font-size: 14px;
+    }
+
+    .food-card {
+        border-radius: 18px;
+    }
+
+    .food-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .about,
+    .contact {
+        padding: 55px 18px;
+    }
+
+}
+
+
+/* ===== Small Mobile ===== */
+
+@media (max-width: 400px) {
+
+    .hero-banner {
+        min-height: 320px;
+    }
+
+    .recipe-filters {
+        gap: 7px;
+    }
+
+    .recipe-filters button {
+        padding: 8px 13px;
+        font-size: 13px;
+    }
+
+}
