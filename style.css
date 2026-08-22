@@ -3091,33 +3091,104 @@ nav a:hover::after {
 }
 
 
-/* ===== Contact Premium ===== */
+/* =========================================
+   SPICELO STORIES — PREMIUM CONTACT
+========================================= */
 
 .contact {
     background:
         linear-gradient(
             135deg,
-            #fff8f0,
-            #fff1df
+            #fff8f0 0%,
+            #fff1df 100%
         );
+
+    padding: 80px 20px;
+
+    text-align: center;
+}
+
+.contact .container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 32px;
+
+    color: #d35400;
+
+    margin-bottom: 14px;
+}
+
+.contact h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin: 12px auto 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d35400,
+            #f39c12
+        );
+
+    border-radius: 10px;
+}
+
+.contact p {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #555;
+
+    margin: 10px 0;
 }
 
 .contact-info {
-    border:
-        1px solid rgba(211, 84, 0, 0.08);
+    margin-top: 30px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(211, 84, 0, 0.08);
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.08);
+        0 12px 35px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.contact-info:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 42px rgba(0, 0, 0, 0.12);
 }
 
 
-/* ===== Premium Footer ===== */
+/* =========================================
+   SPICELO STORIES — PREMIUM FOOTER
+========================================= */
 
 .footer {
     background:
         radial-gradient(
             circle at 50% 0%,
-            rgba(243, 156, 18, 0.10),
+            rgba(243, 156, 18, 0.12),
             transparent 35%
         ),
         linear-gradient(
@@ -3127,6 +3198,117 @@ nav a:hover::after {
         );
 
     border-radius: 28px 28px 0 0;
+
+    margin-top: 20px;
+
+    box-shadow:
+        0 -10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-content h3 {
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 28px;
+
+    letter-spacing: 0.3px;
+}
+
+.footer-content > p {
+    line-height: 1.7;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px 24px;
+
+    margin: 25px 0;
+}
+
+.footer-links a {
+    position: relative;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: #f39c12;
+
+    transform: translateY(-2px);
+}
+
+.copyright {
+    margin-top: 25px;
+
+    font-size: 14px;
+
+    opacity: 0.8;
+}
+
+.designer {
+    font-size: 14px;
+
+    opacity: 0.9;
+}
+
+.designer strong {
+    color: #f39c12;
+}
+
+
+/* =========================================
+   CONTACT + FOOTER — MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .contact {
+        padding: 60px 15px;
+    }
+
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    .contact p {
+        font-size: 16px;
+    }
+
+    .contact-info {
+        padding: 22px 16px;
+
+        border-radius: 18px;
+    }
+
+    .footer {
+        border-radius: 22px 22px 0 0;
+    }
+
+    .footer-content {
+        padding: 0 18px;
+    }
+
+    .footer-content h3 {
+        font-size: 24px;
+    }
+
+    .footer-links {
+        gap: 12px 18px;
+    }
+
 }
 
 
