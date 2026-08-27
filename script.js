@@ -261,7 +261,7 @@ if (
             return;
         }
 
-        likeCount.textContent = `${count || 0} Likes`;
+        likeCount.textContent = `${count || 0} ${count === 1 ? "Like" : "Likes"}`;
     }
 
 

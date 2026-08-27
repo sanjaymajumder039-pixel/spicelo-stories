@@ -3417,3 +3417,18 @@ a,
     min-height: 22px;
     width: 100%;
 }
+/* Egg Curry - How to Make steps */
+
+body[data-recipe-slug="egg-curry"] .recipe-method ol li {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+
+    body[data-recipe-slug="egg-curry"] .recipe-method ol li {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+}
