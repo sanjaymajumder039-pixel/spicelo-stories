@@ -3,3 +3,7 @@
 
 # Temporary CSS copies
 style copy.css
+# Environment secrets
+.env
+# Node.js dependencies
+node_modules/
