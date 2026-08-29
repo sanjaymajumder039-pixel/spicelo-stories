@@ -1,8 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0"
+     xmlns:media="http://search.yahoo.com/mrss/">
+
   <channel>
+
     <title>SpiceLo Stories</title>
     <link>https://spicelostories.com/</link>
     <description>Easy Recipes &amp; Food Stories from SpiceLo Stories</description>
+
+    <item>
+      <title>Easy Chicken Biryani Recipe</title>
+      <link>https://spicelostories.com/biryani.html</link>
+      <description>Delicious and easy Chicken Biryani recipe from SpiceLo Stories.</description>
+      <media:content url="https://spicelostories.com/images/biryani.png" medium="image" />
+    </item>
+
+    <item>
+      <title>Easy Burger Recipe</title>
+      <link>https://spicelostories.com/burger.html</link>
+      <description>Easy homemade Burger recipe from SpiceLo Stories.</description>
+      <media:content url="https://spicelostories.com/images/burger.png" medium="image" />
+    </item>
+
+    <item>
+      <title>Easy Pizza Recipe</title>
+      <link>https://spicelostories.com/pizza.html</link>
+      <description>Easy homemade Pizza recipe from SpiceLo Stories.</description>
+      <media:content url="https://spicelostories.com/images/pizza.png" medium="image" />
+    </item>
+
+    <item>
+      <title>Easy Noodles Recipe</title>
+      <link>https://spicelostories.com/noodles.html</link>
+      <description>Quick and easy Noodles recipe from SpiceLo Stories.</description>
+      <media:content url="https://spicelostories.com/images/noodles.png" medium="image" />
+    </item>
+
+    <item>
+      <title>Easy Cake Recipe</title>
+      <link>https://spicelostories.com/cake.html</link>
+      <description>Simple and delicious Cake recipe from SpiceLo Stories.</description>
+      <media:content url="https://spicelostories.com/images/cake.png" medium="image" />
+    </item>
+
+    <item>
+      <title>Jhal Muri Recipe</title>
+      <link>https://spicelostories.com/jhal-muri.html</link>
+      <description>Simple and tasty Bengali Jhal Muri recipe from SpiceLo Stories.</description>
+      <media:content url="https://spicelostories.com/images/jhal-muri/jhal-muri.png" medium="image" />
+    </item>
+
+    <item>
+      <title>Egg Curry Recipe</title>
+      <link>https://spicelostories.com/egg-curry.html</link>
+      <description>Easy and delicious Egg Curry recipe from SpiceLo Stories.</description>
+      <media:content url="https://spicelostories.com/images/egg-curry.jpg" medium="image" />
+    </item>
+
   </channel>
+
 </rss>
