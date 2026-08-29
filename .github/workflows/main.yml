@@ -1,0 +1,29 @@
+name: SpiceLo Stories Automation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout SpiceLo Stories
+        uses: actions/checkout@v4
+
+      - name: Verify RSS Feed
+        run: |
+          test -f rss.xml
+          echo "RSS feed found successfully."
+
+      - name: Verify Website Files
+        run: |
+          test -f index.html
+          echo "Website files verified successfully."
+
+      - name: Automation Ready
+        run: |
+          echo "SpiceLo Stories automation workflow completed."
+          echo "Website + RSS are ready for the next social-media automation stage."
