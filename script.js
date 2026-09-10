@@ -509,3 +509,130 @@ function updateTimeGreeting() {
 }
 
 updateTimeGreeting();
+/* =========================================
+   SPICELO STORIES — DARK MODE
+========================================= */
+
+const darkModeButton =
+    document.getElementById("darkModeButton");
+
+
+if (darkModeButton) {
+
+    /* Load saved theme */
+
+    if (localStorage.getItem("spiceloTheme") === "dark") {
+
+        document.body.classList.add("dark-mode");
+
+        darkModeButton.textContent = "☀️ Light Mode";
+
+    }
+
+
+    /* Toggle theme */
+
+    darkModeButton.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-mode");
+
+
+        if (document.body.classList.contains("dark-mode")) {
+
+            localStorage.setItem(
+                "spiceloTheme",
+                "dark"
+            );
+
+            darkModeButton.textContent =
+                "☀️ Light Mode";
+
+        } else {
+
+            localStorage.setItem(
+                "spiceloTheme",
+                "light"
+            );
+
+            darkModeButton.textContent =
+                "🌙 Dark Mode";
+
+        }
+
+    });
+
+}
+/* =========================
+   SHARE RECIPE BUTTONS
+========================= */
+
+function shareOnFacebook() {
+    const url = encodeURIComponent(window.location.href);
+
+    window.open(
+        `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+        "_blank"
+    );
+}
+
+function shareOnPinterest() {
+    const url = encodeURIComponent(window.location.href);
+
+    window.open(
+        `https://pinterest.com/pin/create/button/?url=${url}`,
+        "_blank"
+    );
+}
+
+function copyRecipeLink() {
+    const link = window.location.href;
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(link)
+            .then(() => {
+                showCopiedMessage();
+            })
+            .catch(() => {
+                fallbackCopy(link);
+            });
+    } else {
+        fallbackCopy(link);
+    }
+}
+
+
+function fallbackCopy(link) {
+    const textArea = document.createElement("textarea");
+
+    textArea.value = link;
+    textArea.style.position = "fixed";
+    textArea.style.opacity = "0";
+
+    document.body.appendChild(textArea);
+
+    textArea.focus();
+    textArea.select();
+
+    document.execCommand("copy");
+
+    document.body.removeChild(textArea);
+
+    showCopiedMessage();
+}
+
+
+function showCopiedMessage() {
+    const button = document.querySelector(
+        'button[onclick="copyRecipeLink()"]'
+    );
+
+    if (!button) return;
+
+    const originalText = button.innerHTML;
+
+    button.innerHTML = "✅ Link Copied!";
+
+    setTimeout(() => {
+        button.innerHTML = originalText;
+    }, 2000);
+}

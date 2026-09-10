@@ -88,11 +88,15 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="index.html#recipes">Recipes</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#contact">Contact</a>
-    </nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#recipes">Recipes</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+
+    <button type="button" id="darkModeButton">
+        🌙 Dark Mode
+    </button>
+</nav>
 
 
     <!-- Recipe Story -->
@@ -213,6 +217,28 @@
             </p>
 
         </section>
+        <!-- Share Recipe -->
+<section class="recipe-share">
+
+    <h2>Share This Recipe</h2>
+
+    <div class="share-buttons">
+
+        <button type="button" onclick="shareOnFacebook()">
+            📘 Facebook
+        </button>
+
+        <button type="button" onclick="shareOnPinterest()">
+            📌 Pinterest
+        </button>
+
+        <button type="button" onclick="copyRecipeLink()">
+            🔗 Copy Link
+        </button>
+
+    </div>
+
+</section>
 
 <!-- Like & Comments -->
 <section class="recipe-engagement">
@@ -261,6 +287,13 @@
     </div>
 
 </section>
+
+<!-- Print Recipe Button -->
+<div class="recipe-print">
+    <button type="button" onclick="window.print()">
+        🖨️ Print Recipe
+    </button>
+</div>
         <!-- Back Button -->
         <div class="recipe-back">
             <a href="index.html#recipes">← Back to Recipes</a>
@@ -269,6 +302,30 @@
 
         </div>
 
+        <section class="related-recipes">
+
+    <h2>You May Also Like</h2>
+
+    <div class="related-recipes-grid">
+
+        <a href="biryani.html" class="related-recipe-card">
+            <img src="images/biryani.jpg" alt="Biryani">
+            <h3>Delicious Biryani</h3>
+        </a>
+
+        <a href="pizza.html" class="related-recipe-card">
+            <img src="images/pizza.png" alt="Pizza">
+            <h3>Homemade Pizza</h3>
+        </a>
+
+        <a href="burger.html" class="related-recipe-card">
+            <img src="images/burger.png" alt="Burger">
+            <h3>Tasty Burger</h3>
+        </a>
+
+    </div>
+
+</section>
         </main>
 
 

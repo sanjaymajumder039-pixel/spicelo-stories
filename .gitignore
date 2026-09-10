@@ -7,3 +7,5 @@ style copy.css
 .env
 # Node.js dependencies
 node_modules/
+pinterest/token.json
+sandbox-token.json

@@ -62,6 +62,29 @@
     <li>Let the cake cool and decorate with whipped cream.</li>
     <li>Serve and enjoy.</li>
 </ol>
+
+<!-- Share Recipe -->
+<section class="recipe-share">
+
+    <h2>Share This Recipe</h2>
+
+    <div class="share-buttons">
+
+        <button type="button" onclick="shareOnFacebook()">
+            📘 Facebook
+        </button>
+
+        <button type="button" onclick="shareOnPinterest()">
+            📌 Pinterest
+        </button>
+
+        <button type="button" onclick="copyRecipeLink()">
+            🔗 Copy Link
+        </button>
+
+    </div>
+
+</section>
 <!-- Like & Comments -->
 <section class="recipe-engagement">
 
@@ -109,10 +132,45 @@
     </div>
 
 </section>
+<!-- Print Recipe Button -->
+<div class="recipe-print">
+    <button type="button" onclick="window.print()">
+        🖨️ Print Recipe
+    </button>
+
+</div>
 <button onclick="window.location.href='index.html'">
     ⬅ Back to Home
 </button>
 </div>
+<!-- =========================
+     RELATED RECIPES
+========================= -->
+
+<section class="related-recipes">
+
+    <h2>You May Also Like</h2>
+
+    <div class="related-recipes-grid">
+
+        <a href="jhal-muri.html" class="related-recipe-card">
+            <img src="images/jhal-muri/jhal-muri.jpg" alt="Jhal Muri">
+            <h3>Jhal Muri</h3>
+        </a>
+
+        <a href="pizza.html" class="related-recipe-card">
+            <img src="images/pizza.png" alt="Pizza">
+            <h3>Homemade Pizza</h3>
+        </a>
+
+        <a href="burger.html" class="related-recipe-card">
+            <img src="images/burger.png" alt="Burger">
+            <h3>Tasty Burger</h3>
+        </a>
+
+    </div>
+
+</section>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
