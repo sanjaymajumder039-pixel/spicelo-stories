@@ -3796,3 +3796,28 @@ body.dark-mode .recipe-method li::marker {
     }
 
 }
+/* =========================
+   TIPS & FAQ SPACING
+========================= */
+
+.recipe-tips {
+    margin-bottom: 40px;
+}
+
+.recipe-faq {
+    margin-top: 0;
+}
+/* =====================================
+   CHICKEN BIRYANI TIPS & FAQ SPACING
+===================================== */
+
+.recipe-tips {
+    margin-bottom: 30px;
+    padding-bottom: 0;
+}
+
+.recipe-faq {
+    margin-top: 0;
+    margin-bottom: 35px;
+    padding-top: 0;
+}
