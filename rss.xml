@@ -9,11 +9,22 @@
     <description>Easy Recipes &amp; Food Stories from SpiceLo Stories</description>
 
     <item>
+
+      <title>Easy Bengali Fish Curry (Macher Jhol) Recipe</title>
+      <link>https://spicelostories.com/macher-jhol.html</link>
+      <description>Homemade Bengali Fish Curry (Macher Jhol) made with fresh fish and homemade masala.</description>
+      <enclosure url="https://spicelostories.com/images/macher-jhol/macher-jhol-ready.jpg" type="image/jpeg"/>
+      <media:content url="https://spicelostories.com/images/macher-jhol/macher-jhol-ready.jpg" medium="image" />
+
+</item>
+
+    <item>
+    
       <title>Easy Chicken Biryani Recipe</title>
       <link>https://spicelostories.com/biryani.html</link>
       <description>Delicious and easy Chicken Biryani recipe from SpiceLo Stories.</description>
-      <enclosure url="https://spicelostories.com/images/biryani.png" type="image/png" />
-      <media:content url="https://spicelostories.com/images/biryani.png" medium="image" />
+     <enclosure url="https://spicelostories.com/images/biryani.jpg" type="image/jpeg"/>
+     <media:content url="https://spicelostories.com/images/biryani.jpg" medium="image" />
     </item>
 
     <item>

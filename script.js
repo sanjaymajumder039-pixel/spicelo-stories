@@ -636,3 +636,170 @@ function showCopiedMessage() {
         button.innerHTML = originalText;
     }, 2000);
 }
+/* =========================================
+   SPICELO STORIES — AUTOMATIC LATEST RECIPES
+   Reads latest recipes from RSS.xml
+========================================= */
+
+async function loadLatestRecipes() {
+
+    const latestGrid =
+        document.getElementById("latestRecipesGrid");
+
+    if (!latestGrid) {
+        return;
+    }
+
+    try {
+
+        const response =
+            await fetch("rss.xml");
+
+        if (!response.ok) {
+            throw new Error("RSS feed could not be loaded.");
+        }
+
+        const rssText =
+            await response.text();
+
+        const parser =
+            new DOMParser();
+
+        const xml =
+            parser.parseFromString(
+                rssText,
+                "application/xml"
+            );
+
+        const items =
+            Array.from(
+                xml.querySelectorAll("item")
+            );
+
+        if (items.length === 0) {
+
+            latestGrid.innerHTML =
+                "<p>No latest recipes available.</p>";
+
+            return;
+        }
+
+        /* Latest 3 recipes */
+
+        const latestItems = items.slice(0, 3);
+
+        latestGrid.innerHTML = "";
+
+        latestItems.forEach(item => {
+
+            const title =
+                item.querySelector("title")?.textContent
+                || "Recipe";
+
+            const description =
+                item.querySelector("description")?.textContent
+                || "";
+
+            const link =
+                item.querySelector("link")?.textContent
+                || "#";
+
+            const image =
+                item.querySelector("media\\:content")?.getAttribute("url")
+                || item.querySelector("enclosure")?.getAttribute("url")
+                || "";
+
+            const card =
+                document.createElement("article");
+
+            card.className = "latest-card";
+
+            card.innerHTML = `
+                <img
+                    src="${image}"
+                    alt="${title}"
+                >
+
+                <div class="latest-card-content">
+
+                    <span class="latest-category">
+                        Latest Recipe
+                    </span>
+
+                    <h3>${title}</h3>
+
+                    <p>${description}</p>
+
+                    <button
+                        onclick="window.location.href='${link}'">
+                        View Recipe →
+                    </button>
+
+                </div>
+            `;
+
+            latestGrid.appendChild(card);
+
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Latest Recipes Error:",
+            error
+        );
+
+        latestGrid.innerHTML =
+            "<p>Latest recipes could not be loaded.</p>";
+
+    }
+}
+
+
+/* Load Latest Recipes */
+
+loadLatestRecipes();
+/* =========================================
+   SPICELO RECIPE ASSISTANT — CHAT TOGGLE
+========================================= */
+
+const assistantToggle =
+    document.getElementById("assistantToggle");
+
+const assistantChat =
+    document.getElementById("assistantChat");
+
+const assistantClose =
+    document.getElementById("assistantClose");
+
+
+if (assistantToggle && assistantChat) {
+
+    assistantToggle.addEventListener("click", function () {
+
+        assistantChat.style.display = "block";
+
+        assistantChat.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+    });
+
+}
+
+
+if (assistantClose && assistantChat) {
+
+    assistantClose.addEventListener("click", function () {
+
+        assistantChat.style.display = "none";
+
+        assistantChat.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    });
+
+}

@@ -3821,3 +3821,586 @@ body.dark-mode .recipe-method li::marker {
     margin-bottom: 35px;
     padding-top: 0;
 }
+
+/* =========================================
+   PROFESSIONAL LATEST RECIPES
+========================================= */
+
+.latest-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    color: #d35400;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    margin: 0 auto 14px;
+
+    animation: latestTextBlink 2s ease-in-out infinite;
+}
+
+/* Animated food icons */
+
+.latest-label::before {
+    content: "🍴";
+    font-size: 22px;
+    display: inline-block;
+    animation: foodIconMove 2s ease-in-out infinite;
+}
+
+.latest-label::after {
+    content: "🍽️";
+    font-size: 22px;
+    display: inline-block;
+    animation: foodIconMove 2s ease-in-out infinite reverse;
+}
+
+/* Text soft blink */
+
+@keyframes latestTextBlink {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.55;
+        transform: scale(1.03);
+    }
+}
+
+/* Icon movement */
+
+@keyframes foodIconMove {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-4px) rotate(-6deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-4px) rotate(6deg);
+    }
+}
+/* =========================================
+   SPICELO STORIES — LATEST RECIPES
+   Professional Food Blog Style
+========================================= */
+
+.latest-recipes {
+    padding: 50px 20px 60px;
+}
+
+/* Section Label */
+
+.latest-label {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Main Heading */
+
+.latest-recipes h2 {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+/* Intro */
+
+.latest-intro {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 auto 30px;
+    max-width: 650px;
+}
+
+/* Latest Recipe Grid */
+
+.latest-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* =========================================
+   RECIPE CARD
+========================================= */
+
+.latest-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Recipe Image */
+
+.latest-card > img {
+    width: 100%;
+    height: 165px;
+
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+/* Card Content */
+
+.latest-card-content {
+    padding: 17px;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* =========================================
+   PROFESSIONAL LATEST RECIPES LABEL
+========================================= */
+
+.latest-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    color: #d35400;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    margin: 0 auto 14px;
+}
+
+/* Food-style decoration */
+.latest-label::before {
+    content: "🍴";
+    font-size: 22px;
+    display: inline-block;
+    animation: foodIconMove 2s ease-in-out infinite;
+}
+
+.latest-label::after {
+    content: "🍽️";
+    font-size: 22px;
+    display: inline-block;
+    animation: foodIconMove 2s ease-in-out infinite reverse;
+}
+
+@keyframes foodIconMove {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-4px) rotate(-6deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-4px) rotate(6deg);
+    }
+}
+
+/* Recipe Title */
+
+.latest-card h3 {
+    font-size: 19px;
+    line-height: 1.35;
+
+    margin: 4px 0 9px;
+}
+
+/* Description */
+
+.latest-card p {
+    font-size: 14px;
+    line-height: 1.55;
+
+    margin: 0 0 16px;
+}
+/* =========================================
+   LATEST RECIPES — FOCUS EFFECT
+========================================= */
+
+/* First recipe — fully clear */
+.latest-card:nth-child(1) {
+    filter: blur(0);
+    opacity: 1;
+}
+
+/* Second recipe — slightly soft */
+.latest-card:nth-child(2) {
+    filter: blur(0.6px);
+    opacity: 0.92;
+}
+
+/* Third recipe — slightly more soft */
+.latest-card:nth-child(3) {
+    filter: blur(1.2px);
+    opacity: 0.84;
+}
+
+/* Keep cards clear when user hovers */
+.latest-card:nth-child(2):hover,
+.latest-card:nth-child(3):hover {
+    filter: blur(0);
+    opacity: 1;
+}
+
+/* =========================================
+   PROFESSIONAL VIEW RECIPE BUTTON
+========================================= */
+
+.latest-card button {
+    margin-top: auto;
+
+    align-self: flex-start;
+
+    background: #d35400;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 9px 17px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.latest-card button:hover {
+    background: #b94700;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 16px rgba(211, 84, 0, 0.25);
+}
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.latest-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+.latest-card:hover > img {
+    transform: scale(1.04);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .latest-recipes {
+        padding: 40px 15px 50px;
+    }
+
+    .latest-recipes h2 {
+        font-size: 28px;
+    }
+
+    .latest-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        gap: 20px;
+    }
+
+    .latest-card > img {
+        height: 210px;
+    }
+
+}
+/* =========================================
+   SPICELO RECIPE ASSISTANT
+========================================= */
+
+.spicelo-assistant {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 9999;
+}
+
+/* Floating Assistant Button */
+
+.assistant-toggle {
+    width: 58px;
+    height: 58px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #d35400;
+    color: #ffffff;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.assistant-toggle:hover {
+    transform: translateY(-3px) scale(1.05);
+
+    box-shadow:
+        0 9px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* Chat Window */
+
+.assistant-chat {
+    position: absolute;
+
+    right: 0;
+    bottom: 72px;
+
+    width: 350px;
+    max-width: calc(100vw - 30px);
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.20);
+
+    display: none;
+}
+
+/* Header */
+
+.assistant-header {
+    background: #d35400;
+    color: #ffffff;
+
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.assistant-header strong {
+    display: block;
+    font-size: 16px;
+}
+
+.assistant-header small {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* Close Button */
+
+.assistant-close {
+    border: none;
+    background: transparent;
+    color: #ffffff;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+/* Messages */
+
+.assistant-messages {
+    height: 300px;
+
+    padding: 15px;
+
+    overflow-y: auto;
+
+    background: #fffaf5;
+}
+
+.assistant-message {
+    max-width: 85%;
+
+    padding: 11px 13px;
+
+    margin-bottom: 10px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.assistant-message.bot {
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+}
+
+/* Input Area */
+
+.assistant-input-area {
+    display: flex;
+
+    padding: 10px;
+
+    border-top: 1px solid #eeeeee;
+
+    background: #ffffff;
+}
+
+.assistant-input-area input {
+    flex: 1;
+
+    border: 1px solid #dddddd;
+    border-radius: 20px;
+
+    padding: 10px 14px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.assistant-input-area input:focus {
+    border-color: #d35400;
+}
+
+.assistant-input-area button {
+    width: 42px;
+    height: 42px;
+
+    margin-left: 8px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #d35400;
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .spicelo-assistant {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .assistant-chat {
+        width: 330px;
+        max-width: calc(100vw - 30px);
+    }
+
+}
+/* =========================================
+   SPICELO STORIES — WHATSAPP BUTTON
+========================================= */
+
+.whatsapp-button {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+    color: #ffffff;
+
+    border-radius: 50%;
+    text-decoration: none;
+
+    font-size: 28px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.20);
+
+    z-index: 9998;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-3px) scale(1.06);
+
+    box-shadow:
+        0 9px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .whatsapp-button {
+        right: 15px;
+        bottom: 15px;
+
+        width: 54px;
+        height: 54px;
+
+        font-size: 26px;
+    }
+
+}
