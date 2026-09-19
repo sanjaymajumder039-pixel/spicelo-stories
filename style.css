@@ -745,7 +745,7 @@ ol li {
             rgba(0, 0, 0, 0.28),
             rgba(0, 0, 0, 0.42)
         ),
-        url("images/hero-banner.png");
+        url("images/hero-banner-optimized.jpg");
 
     background-size: cover;
     background-position: center;
@@ -2520,7 +2520,6 @@ footer {
     text-align: center;
     max-width: 700px;
     padding: 12px 22px;
-    animation: greetingFade 1.2s ease;
 }
 
 .time-greeting h2 {
