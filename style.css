@@ -2670,33 +2670,6 @@ footer {
 
 
 
-/* 🐦 Flying birds */
-
-.time-atmosphere.morning .bird {
-    position: absolute;
-    font-size: 25px;
-    z-index: 3;
-    white-space: nowrap;
-}
-
-
-/* 🐦 Bird 1 */
-
-.time-atmosphere.morning .bird-one {
-    top: 70px;
-    left: -50px;
-    animation: morningBirdOne 14s linear infinite;
-}
-
-
-/* 🐦 Bird 2 */
-
-.time-atmosphere.morning .bird-two {
-    top: 115px;
-    left: -80px;
-    animation: morningBirdTwo 18s linear infinite 4s;
-}
-
 
 /* 🦋 Butterfly */
 
