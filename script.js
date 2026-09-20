@@ -451,7 +451,7 @@ function updateTimeGreeting() {
 
         atmosphere.className = "time-atmosphere morning";
 
-        atmosphere.innerHTML = `
+                atmosphere.innerHTML = ``;
             
     }
 
@@ -482,9 +482,6 @@ function updateTimeGreeting() {
 
         atmosphere.innerHTML = `
             <span class="sunset">🌆</span>
-            <span class="bird bird-one">🐦</span>
-            <span class="bird bird-two">🐦</span>
-            
         `;
     }
 
