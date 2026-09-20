@@ -4376,3 +4376,41 @@ body.dark-mode .recipe-method li::marker {
     }
 
 }
+/* =========================================
+   MOBILE — LATEST RECIPES HORIZONTAL ROW
+========================================= */
+
+@media (max-width: 600px) {
+
+    .latest-grid {
+        display: flex;
+        flex-direction: row;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        gap: 16px;
+
+        padding: 5px 4px 15px;
+
+        scroll-snap-type: x mandatory;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    .latest-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .latest-card {
+        flex: 0 0 78%;
+
+        min-width: 78%;
+
+        scroll-snap-align: start;
+    }
+    
+
+}
