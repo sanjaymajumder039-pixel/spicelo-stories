@@ -8,6 +8,16 @@
     <link>https://spicelostories.com/</link>
     <description>Easy Recipes &amp; Food Stories from SpiceLo Stories</description>
 
+        <item>
+
+      <title>Easy Masoor Dal Fry with Raw Papaya Recipe</title>
+      <link>https://spicelostories.com/dal-fry.html</link>
+      <description>Homemade Masoor Dal Fry with raw papaya, fresh vegetables and a flavourful cumin tadka.</description>
+      <enclosure url="https://spicelostories.com/images/dal-fry/dal-fry-ready.jpg" type="image/jpeg"/>
+      <media:content url="https://spicelostories.com/images/dal-fry/dal-fry-ready.jpg" medium="image" />
+
+    </item>
+
     <item>
 
       <title>Easy Bengali Fish Curry (Macher Jhol) Recipe</title>
@@ -16,7 +26,7 @@
       <enclosure url="https://spicelostories.com/images/macher-jhol/macher-jhol-ready.jpg" type="image/jpeg"/>
       <media:content url="https://spicelostories.com/images/macher-jhol/macher-jhol-ready.jpg" medium="image" />
 
-</item>
+    </item>
 
     <item>
     
@@ -25,25 +35,31 @@
       <description>Delicious and easy Chicken Biryani recipe from SpiceLo Stories.</description>
      <enclosure url="https://spicelostories.com/images/biryani.jpg" type="image/jpeg"/>
      <media:content url="https://spicelostories.com/images/biryani.jpg" medium="image" />
+
     </item>
 
     <item>
+
       <title>Easy Burger Recipe</title>
       <link>https://spicelostories.com/burger.html</link>
       <description>Easy homemade Burger recipe from SpiceLo Stories.</description>
       <enclosure url="https://spicelostories.com/images/burger.png" type="image/png" />
       <media:content url="https://spicelostories.com/images/burger.png" medium="image" />
+
     </item>
 
     <item>
+
       <title>Easy Pizza Recipe</title>
       <link>https://spicelostories.com/pizza.html</link>
       <description>Easy homemade Pizza recipe from SpiceLo Stories.</description>
       <enclosure url="https://spicelostories.com/images/pizza.png" type="image/png" />
       <media:content url="https://spicelostories.com/images/pizza.png" medium="image" />
+
     </item>
 
     <item>
+    
       <title>Easy Noodles Recipe</title>
       <link>https://spicelostories.com/noodles.html</link>
       <description>Quick and easy Noodles recipe from SpiceLo Stories.</description>
