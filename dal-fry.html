@@ -509,14 +509,23 @@
                 </h2>
 
                 <video
-                    controls
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                    style="width: 80%; max-width: 700px; display: block; margin: 0 auto;"
-                >
+    controls
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    style="
+        width: 80%;
+        max-width: 700px;
+        max-height: 400px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
+        border-radius: 14px;
+    "
+>
 
                     <source
                         src="vedio folder/dal-fry.mp4"

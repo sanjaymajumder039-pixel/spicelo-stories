@@ -4434,3 +4434,87 @@ body.dark-mode .recipe-method li::marker {
     
 
 }
+/* =========================================
+   SpiceLo Recipe Page - Final Readability
+   ========================================= */
+
+.recipe-page section {
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+.recipe-page h2 {
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+.recipe-page p,
+.recipe-page li {
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.recipe-story p {
+    margin-bottom: 12px;
+}
+
+/* Recipe Images */
+.recipe-image-section {
+    margin: 20px auto 28px;
+}
+
+.recipe-main-image {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 16px;
+    object-fit: contain;
+}
+
+/* Cooking Video Section */
+.recipe-video {
+    margin-top: 20px;
+    margin-bottom: 32px;
+}
+
+.recipe-video h2 {
+    margin-bottom: 18px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .recipe-page section {
+        margin-bottom: 26px;
+    }
+
+    .recipe-page p,
+    .recipe-page li {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .recipe-page h2 {
+        font-size: 25px;
+        line-height: 1.3;
+        margin-bottom: 12px;
+    }
+
+    .recipe-image-section {
+        margin: 16px auto 24px;
+    }
+
+    .recipe-main-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 14px;
+    }
+
+    .recipe-video {
+        margin-top: 16px;
+        margin-bottom: 26px;
+    }
+}
