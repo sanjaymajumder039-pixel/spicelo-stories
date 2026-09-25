@@ -4518,3 +4518,98 @@ body.dark-mode .recipe-method li::marker {
         margin-bottom: 26px;
     }
 }
+/* Serving Calculator */
+.servings-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.servings-control button {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 32px;
+}
+
+.servings-control #servingCount {
+    min-width: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+/* ==========================================
+   Ingredient Checklist
+========================================== */
+
+#ingredientChecklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+#ingredientChecklist li {
+    margin-bottom: 10px;
+}
+
+#ingredientChecklist label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+#ingredientChecklist input[type="checkbox"] {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    appearance: auto !important;
+    -webkit-appearance: checkbox !important;
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+/* ==========================================
+   Back to Top Button
+========================================== */
+
+#backToTop {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+
+    width: 48px;
+    height: 48px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background: #e67e22;
+    color: #ffffff;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.20);
+
+    z-index: 999;
+}
+
+#backToTop:hover {
+    background: #d35400;
+    transform: translateY(-3px);
+}

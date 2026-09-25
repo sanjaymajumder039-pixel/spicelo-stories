@@ -26,6 +26,13 @@
 <div class="recipe-container">
 
     <h1>🍗 Chicken Biryani Recipe</h1>
+    <!-- Jump to Recipe Button -->
+<button
+    type="button"
+    onclick="document.getElementById('recipe').scrollIntoView({ behavior: 'smooth' });"
+>
+    🍽️ Jump to Recipe
+</button>
 
     <img src="images/biryani.jpg" alt="Chicken Biryani with basmati rice and aromatic spices">
     <p class="recipe-intro">
@@ -94,13 +101,20 @@
     </div>
 </div>
 
-    <div class="recipe-detail">
-        <span class="recipe-icon">🍽️</span>
-        <div>
-            <strong>Servings</strong>
-            <p>4</p>
+   <div class="recipe-detail">
+    <span class="recipe-icon">🍽️</span>
+    <div>
+        <strong>Servings</strong>
+
+        <div class="servings-control">
+            <button type="button" id="decreaseServing">−</button>
+
+            <span id="servingCount">4</span>
+
+            <button type="button" id="increaseServing">+</button>
         </div>
     </div>
+</div>
 
     <div class="recipe-detail">
         <span class="recipe-icon">📊</span>
@@ -112,7 +126,7 @@
 
 </div>
 
-    <h2>Ingredients for Chicken Biryani</h2>
+    <h2 id="recipe">Ingredients</h2>
 
 <ul>
     <li>1 kg Chicken</li>
@@ -432,5 +446,14 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
+<!-- Back to Top Button -->
+<button
+    type="button"
+    id="backToTop"
+    aria-label="Back to top"
+    title="Back to top"
+>
+    ↑
+</button>
 </body>
 </html>

@@ -798,3 +798,254 @@ if (assistantClose && assistantChat) {
     });
 
 }
+// ==========================================
+// Recipe Serving Calculator
+// ==========================================
+document.addEventListener("DOMContentLoaded", function () {
+
+    const decreaseBtn = document.getElementById("decreaseServing");
+    const increaseBtn = document.getElementById("increaseServing");
+    const servingCount = document.getElementById("servingCount");
+
+    // Run only when the serving calculator exists
+    if (!decreaseBtn || !increaseBtn || !servingCount) return;
+
+    const ingredientList = document.querySelector("#recipe + ul");
+
+    if (!ingredientList) return;
+
+    // ==========================================
+    // Recipe Ingredients
+    // ==========================================
+
+    const pizzaIngredients = [
+        { min: 1, max: 1, unit: "", name: "Ready-Made Pizza Base" },
+        { min: 4, max: 5, unit: "tbsp", name: "Tomato Pizza Sauce" },
+        { min: 1, max: 1, unit: "Cup", name: "Grated Mozzarella Cheese" },
+        { min: 0.5, max: 0.5, unit: "", name: "Onion, Thinly Sliced" },
+        { min: 0.5, max: 0.5, unit: "", name: "Capsicum, Thinly Sliced" },
+        { min: 5, max: 6, unit: "", name: "Olives, Sliced" },
+        { min: 0.5, max: 0.5, unit: "tsp", name: "Mixed Italian Herbs (Optional)" },
+        { special: "Chilli Flakes to Taste (Optional)" }
+    ];
+
+    const burgerIngredients = [
+        { min: 2, max: 2, unit: "", name: "Burger Buns" },
+        { min: 2, max: 2, unit: "", name: "Vegetable Patties" },
+        { min: 2, max: 2, unit: "", name: "Cheese Slices" },
+        { min: 4, max: 6, unit: "", name: "Lettuce Leaves" },
+        { min: 1, max: 1, unit: "Small", name: "Tomato, Sliced" },
+        { min: 1, max: 1, unit: "Small", name: "Onion, Sliced" },
+        { min: 2, max: 2, unit: "Tablespoons", name: "Mayonnaise" },
+        { min: 2, max: 2, unit: "Tablespoons", name: "Tomato Ketchup" },
+        { min: 1, max: 2, unit: "Tablespoons", name: "Butter or Oil for Toasting" }
+    ];
+
+    // ==========================================
+// Biryani Ingredients
+// ==========================================
+
+const biryaniIngredients = [
+    { min: 1, max: 1, unit: "kg", name: "Chicken" },
+    { min: 1, max: 1, unit: "kg", name: "Basmati Rice" },
+    { min: 4, max: 4, unit: "Large", name: "Onions, Thinly Sliced" },
+    { min: 3, max: 3, unit: "", name: "Tomatoes, Chopped" },
+    { min: 1, max: 1, unit: "Cup", name: "Yogurt" },
+    { min: 2, max: 2, unit: "tbsp", name: "Ginger-Garlic Paste" },
+    { min: 2, max: 2, unit: "tbsp", name: "Biryani Masala" },
+    { min: 4, max: 5, unit: "", name: "Green Chillies" },
+    { special: "Fresh Coriander, Chopped" },
+    { special: "Cooking Oil as Required" },
+    { special: "Salt to Taste" }
+];
+    // Detect which recipe page is open
+    const pageTitle = document.querySelector("h1");
+
+    if (!pageTitle) return;
+
+    const recipeName = pageTitle.textContent.toLowerCase();
+
+    let recipeIngredients;
+
+    if (recipeName.includes("pizza")) {
+
+    recipeIngredients = pizzaIngredients;
+
+} else if (recipeName.includes("burger")) {
+
+    recipeIngredients = burgerIngredients;
+
+} else if (recipeName.includes("biryani")) {
+
+    recipeIngredients = biryaniIngredients;
+
+} else {
+    return;
+}
+
+    // Both Pizza and Burger currently start with 2 servings
+    
+    const baseServings = recipeName.includes("biryani") ? 4 : 2;
+
+    let currentServings = baseServings;
+
+    // ==========================================
+    // Number Formatting
+    // ==========================================
+
+    function formatNumber(value) {
+
+        const fractions = {
+            0.25: "¼",
+            0.5: "½",
+            0.75: "¾"
+        };
+
+        const whole = Math.floor(value);
+        const decimal = Math.round((value - whole) * 100) / 100;
+
+        if (fractions[decimal]) {
+            return whole > 0
+                ? `${whole}${fractions[decimal]}`
+                : fractions[decimal];
+        }
+
+        if (decimal === 0) {
+            return String(whole);
+        }
+
+        return value.toFixed(2).replace(/\.?0+$/, "");
+    }
+
+    // ==========================================
+    // Update Ingredients
+    // ==========================================
+
+    function updateIngredients() {
+
+        const checkedItems = Array.from(
+            ingredientList.querySelectorAll('input[type="checkbox"]')
+        ).map(checkbox => checkbox.checked);
+
+        ingredientList.innerHTML = "";
+
+        recipeIngredients.forEach(function (ingredient, index) {
+
+            const li = document.createElement("li");
+
+            const label = document.createElement("label");
+
+            label.style.display = "flex";
+            label.style.alignItems = "center";
+            label.style.gap = "10px";
+            label.style.cursor = "pointer";
+
+            const checkbox = document.createElement("input");
+
+            checkbox.type = "checkbox";
+            checkbox.checked = checkedItems[index] || false;
+
+            const text = document.createElement("span");
+
+            if (ingredient.special) {
+
+                text.textContent = ingredient.special;
+
+            } else {
+
+                const multiplier = currentServings / baseServings;
+
+                const scaledMin = ingredient.min * multiplier;
+                const scaledMax = ingredient.max * multiplier;
+
+                let quantity;
+
+                if (scaledMin === scaledMax) {
+
+                    quantity = formatNumber(scaledMin);
+
+                } else {
+
+                    quantity =
+                        `${formatNumber(scaledMin)}–${formatNumber(scaledMax)}`;
+
+                }
+
+                const unit = ingredient.unit
+                    ? ` ${ingredient.unit}`
+                    : "";
+
+                text.textContent =
+                    `${quantity}${unit} ${ingredient.name}`;
+            }
+
+            label.appendChild(checkbox);
+            label.appendChild(text);
+
+            li.appendChild(label);
+
+            ingredientList.appendChild(li);
+        });
+    }
+
+    // ==========================================
+    // Decrease Serving
+    // ==========================================
+
+    decreaseBtn.addEventListener("click", function () {
+
+        if (currentServings > 1) {
+
+            currentServings--;
+
+            servingCount.textContent = currentServings;
+
+            updateIngredients();
+        }
+    });
+
+    // ==========================================
+    // Increase Serving
+    // ==========================================
+
+    increaseBtn.addEventListener("click", function () {
+
+        if (currentServings < 20) {
+
+            currentServings++;
+
+            servingCount.textContent = currentServings;
+
+            updateIngredients();
+        }
+    });
+
+    // Initial ingredient update
+    updateIngredients();
+
+});
+// ==========================================
+// Back to Top
+// ==========================================
+document.addEventListener("DOMContentLoaded", function () {
+
+    const backToTop = document.getElementById("backToTop");
+
+    if (!backToTop) return;
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 400) {
+            backToTop.style.display = "flex";
+        } else {
+            backToTop.style.display = "none";
+        }
+    });
+
+    backToTop.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+});

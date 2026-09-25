@@ -98,6 +98,9 @@
 <div class="recipe-container">
 
     <h1>🍕 Pizza Recipe</h1>
+    <button type="button" onclick="document.getElementById('recipe').scrollIntoView({ behavior: 'smooth' });">
+    🍽️ Jump to Recipe
+</button>
 
     <img src="images/pizza.png" alt="Pizza">
     <p class="recipe-intro">
@@ -140,21 +143,76 @@
     <span>⏱️ Prep Time: 5 min</span>
     <span>🔥 Cook Time: 15 min</span>
     <span>🕒 Total Time: 20 min</span>
-    <span>🍽️ Servings: 2</span>
+    <div class="servings-control">
+    <span>🍽️ Servings:</span>
+
+    <button type="button" id="decreaseServing">−</button>
+
+    <span id="servingCount">2</span>
+
+    <button type="button" id="increaseServing">+</button>
+</div>
     <span>📊 Difficulty: Easy</span>
 </div>
 
-   <h2>Ingredients for Homemade Pizza</h2>
+   <h2 id="recipe">Ingredients for Homemade Pizza</h2>
 
-<ul>
-    <li>1 Ready-Made Pizza Base</li>
-    <li>4–5 tbsp Tomato Pizza Sauce</li>
-    <li>1 Cup Grated Mozzarella Cheese</li>
-    <li>½ Onion, Thinly Sliced</li>
-    <li>½ Capsicum, Thinly Sliced</li>
-    <li>5–6 Olives, Sliced</li>
-    <li>½ tsp Mixed Italian Herbs (Optional)</li>
-    <li>Chilli Flakes to Taste (Optional)</li>
+<ul id="ingredientChecklist">
+    <li>
+        <label>
+            <input type="checkbox">
+            <span>1 Ready-Made Pizza Base</span>
+        </label>
+    </li>
+
+    <li>
+        <label>
+            <input type="checkbox">
+            <span>4–5 tbsp Tomato Pizza Sauce</span>
+        </label>
+    </li>
+
+    <li>
+        <label>
+            <input type="checkbox">
+            <span>1 Cup Grated Mozzarella Cheese</span>
+        </label>
+    </li>
+
+    <li>
+        <label>
+            <input type="checkbox">
+            <span>½ Onion, Thinly Sliced</span>
+        </label>
+    </li>
+
+    <li>
+        <label>
+            <input type="checkbox">
+            <span>½ Capsicum, Thinly Sliced</span>
+        </label>
+    </li>
+
+    <li>
+        <label>
+            <input type="checkbox">
+            <span>5–6 Olives, Sliced</span>
+        </label>
+    </li>
+
+    <li>
+        <label>
+            <input type="checkbox">
+            <span>½ tsp Mixed Italian Herbs (Optional)</span>
+        </label>
+    </li>
+
+    <li>
+        <label>
+            <input type="checkbox">
+            <span>Chilli Flakes to Taste (Optional)</span>
+        </label>
+    </li>
 </ul>
 
     <h2>How to Make Homemade Pizza</h2>
@@ -352,5 +410,15 @@
 </section>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
+
+<!-- Back to Top Button -->
+<button
+    type="button"
+    id="backToTop"
+    aria-label="Back to top"
+    title="Back to top"
+>
+    ↑
+</button>
 </body>
 </html>
