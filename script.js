@@ -840,6 +840,20 @@ document.addEventListener("DOMContentLoaded", function () {
         { min: 2, max: 2, unit: "Tablespoons", name: "Tomato Ketchup" },
         { min: 1, max: 2, unit: "Tablespoons", name: "Butter or Oil for Toasting" }
     ];
+    const noodlesIngredients = [
+    { min: 200, max: 200, unit: "g", name: "Noodles" },
+    { min: 2, max: 2, unit: "", name: "Eggs" },
+    { min: 1, max: 1, unit: "Small", name: "Carrot, Julienned" },
+    { min: 1, max: 1, unit: "Small", name: "Capsicum, Sliced" },
+    { min: 1, max: 1, unit: "Small", name: "Onion, Sliced" },
+    { min: 2, max: 2, unit: "", name: "Garlic Cloves, Chopped" },
+    { min: 2, max: 2, unit: "Tablespoons", name: "Soy Sauce" },
+    { min: 1, max: 1, unit: "Tablespoon", name: "Chili Sauce" },
+    { min: 1, max: 1, unit: "Tablespoon", name: "Tomato Ketchup" },
+    { special: "Salt, to taste" },
+    { special: "Black Pepper, to taste" },
+    { min: 2, max: 2, unit: "Tablespoons", name: "Cooking Oil" }
+];
 
     // ==========================================
 // Biryani Ingredients
@@ -867,22 +881,17 @@ const biryaniIngredients = [
 
     let recipeIngredients;
 
-    if (recipeName.includes("pizza")) {
-
+   if (recipeName.includes("pizza")) {
     recipeIngredients = pizzaIngredients;
-
 } else if (recipeName.includes("burger")) {
-
     recipeIngredients = burgerIngredients;
-
 } else if (recipeName.includes("biryani")) {
-
     recipeIngredients = biryaniIngredients;
-
+} else if (recipeName.includes("noodles")) {
+    recipeIngredients = noodlesIngredients;
 } else {
     return;
 }
-
     // Both Pizza and Burger currently start with 2 servings
     
     const baseServings = recipeName.includes("biryani") ? 4 : 2;
