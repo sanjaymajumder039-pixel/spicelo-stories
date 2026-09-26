@@ -854,6 +854,18 @@ document.addEventListener("DOMContentLoaded", function () {
     { special: "Black Pepper, to taste" },
     { min: 2, max: 2, unit: "Tablespoons", name: "Cooking Oil" }
 ];
+const cakeIngredients = [
+    { min: 2, max: 2, unit: "Cups", name: "All-Purpose Flour" },
+    { min: 1.5, max: 1.5, unit: "Cups", name: "Sugar" },
+    { min: 0.5, max: 0.5, unit: "Cup", name: "Butter" },
+    { min: 2, max: 2, unit: "", name: "Eggs" },
+    { min: 1, max: 1, unit: "Cup", name: "Milk" },
+    { min: 2, max: 2, unit: "tsp", name: "Baking Powder" },
+    { min: 1, max: 1, unit: "tsp", name: "Vanilla Essence" },
+    { special: "A Pinch of Salt" },
+    { special: "Chocolate Chips (Optional)" },
+    { special: "Whipped Cream for Decoration" }
+];
 
     // ==========================================
 // Biryani Ingredients
@@ -889,6 +901,8 @@ const biryaniIngredients = [
     recipeIngredients = biryaniIngredients;
 } else if (recipeName.includes("noodles")) {
     recipeIngredients = noodlesIngredients;
+} else if (recipeName.includes("cake")) {
+    recipeIngredients = cakeIngredients;
 } else {
     return;
 }

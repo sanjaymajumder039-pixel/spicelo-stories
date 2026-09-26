@@ -27,6 +27,12 @@
 <div class="recipe-container">
 
 <h1>Easy Homemade Vanilla Cake Recipe</h1>
+<button
+    type="button"
+    onclick="document.getElementById('recipe').scrollIntoView({ behavior: 'smooth' });"
+>
+    🍽️ Jump to Recipe
+</button>
 
 <img src="images/cake.png" alt="Soft and fluffy homemade vanilla cake">
 
@@ -71,14 +77,55 @@
 </section>
 
 <div class="recipe-info">
-    <span>⏱️ Prep Time: 15 min</span>
-    <span>🔥 Bake Time: 30 min</span>
-    <span>🕒 Total Time: 45 min</span>
-    <span>🍽️ Servings: 6</span>
-    <span>📊 Difficulty: Medium</span>
+
+    <div class="recipe-detail">
+        <span class="recipe-icon">⏱️</span>
+        <div>
+            <strong>Prep Time</strong>
+            <p>15 min</p>
+        </div>
+    </div>
+
+    <div class="recipe-detail">
+        <span class="recipe-icon">🔥</span>
+        <div>
+            <strong>Bake Time</strong>
+            <p>30 min</p>
+        </div>
+    </div>
+
+    <div class="recipe-detail">
+        <span class="recipe-icon">🕒</span>
+        <div>
+            <strong>Total Time</strong>
+            <p>45 min</p>
+        </div>
+    </div>
+
+    <div class="recipe-detail">
+    <span class="recipe-icon">🍽️</span>
+    <div>
+        <strong>Servings</strong>
+
+        <div class="servings-control">
+            <button type="button" id="decreaseServing">−</button>
+            <span id="servingCount">6</span>
+            <button type="button" id="increaseServing">+</button>
+        </div>
+    </div>
 </div>
 
-<h2>Ingredients for Homemade Vanilla Cake</h2>
+    <div class="recipe-detail">
+        <span class="recipe-icon">📊</span>
+        <div>
+            <strong>Difficulty</strong>
+            <p>Medium</p>
+        </div>
+    </div>
+
+</div>
+
+<h2 id="recipe">Ingredients for Homemade Vanilla Cake</h2>
 
 <ul>
     <li>2 Cups All-Purpose Flour</li>
@@ -357,5 +404,14 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
+<!-- Back to Top Button -->
+<button
+    type="button"
+    id="backToTop"
+    aria-label="Back to top"
+    title="Back to top"
+>
+    ↑
+</button>
 </body>
 </html>
