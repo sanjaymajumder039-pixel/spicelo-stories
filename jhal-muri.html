@@ -107,6 +107,12 @@
             <p class="recipe-label">SPICELO STORY</p>
 
             <h1>Jhal Muri</h1>
+            <button
+    type="button"
+    onclick="document.getElementById('recipe').scrollIntoView({ behavior: 'smooth' });"
+>
+    🍽️ Jump to Recipe
+</button>
 
             <p class="recipe-intro">
                 A simple 10-minute snack with a personal story from my study days to my computer-work days.
@@ -150,28 +156,41 @@
         <!-- Recipe Information -->
         <section class="recipe-info">
 
-            <div>
-                <h3>Ready In</h3>
-                <p>10 Minutes</p>
-            </div>
+    <div class="recipe-detail">
+        <span class="recipe-icon">⏱️</span>
+        <div>
+            <strong>Ready In</strong>
+            <p>10 min</p>
+        </div>
+    </div>
 
-            <div>
-                <h3>Best Time</h3>
-                <p>Morning or Evening</p>
-            </div>
+    <div class="recipe-detail">
+        <span class="recipe-icon">🌅</span>
+        <div>
+            <strong>Best Time</strong>
+            <p>Morning or Evening</p>
+        </div>
+    </div>
 
-            <div>
-                <h3>Type</h3>
-                <p>Quick Snack</p>
-            </div>
+    <div class="recipe-detail">
+    <span class="recipe-icon">🍽️</span>
+    <div>
+        <strong>Servings</strong>
+        <div class="servings-control">
+            <button type="button" id="decreaseServing">−</button>
+            <span id="servingCount">2</span>
+            <button type="button" id="increaseServing">+</button>
+        </div>
+    </div>
+</div>
 
-        </section>
+</section>
 
 
         <!-- Ingredients -->
         <section class="recipe-ingredients">
 
-            <h2>Ingredients</h2>
+            <h2 id="recipe">Ingredients for Jhal Muri</h2>
 
             <ul>
                 <li>250 g Muri (puffed rice)</li>
@@ -334,6 +353,15 @@
     </footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
+<!-- Back to Top Button -->
+<button
+    type="button"
+    id="backToTop"
+    aria-label="Back to top"
+    title="Back to top"
+>
+    ↑
+</button>
 </body>
 
 </html>

@@ -145,6 +145,12 @@
                 <p class="recipe-label">SPICELO STORY</p>
 
                 <h1>Egg Curry</h1>
+                <button
+    type="button"
+    onclick="document.getElementById('recipe').scrollIntoView({ behavior: 'smooth' });"
+>
+    🍽️ Jump to Recipe
+</button>
 
                 <p class="recipe-intro">
     Learn how to make a simple and delicious homemade Egg Curry with boiled
@@ -212,12 +218,16 @@
     </div>
 
     <div class="recipe-detail">
-        <span class="recipe-icon">🍽️</span>
-        <div>
-            <strong>Servings</strong>
-            <p>2 People</p>
+    <span class="recipe-icon">🍽️</span>
+    <div>
+        <strong>Servings</strong>
+        <div class="servings-control">
+            <button type="button" id="decreaseServing">−</button>
+            <span id="servingCount">2</span>
+            <button type="button" id="increaseServing">+</button>
         </div>
     </div>
+</div>
 
     <div class="recipe-detail">
         <span class="recipe-icon">📊</span>
@@ -235,7 +245,7 @@
             <!-- Ingredients -->
             <section class="recipe-ingredients">
 
-                <h2>Ingredients</h2>
+                <h2 id="recipe">Ingredients for Egg Curry</h2>
 
                 <p>
                     <strong>For 2 persons</strong>
@@ -520,6 +530,15 @@
 
     <!-- Main JavaScript -->
     <script src="script.js"></script>
+    <!-- Back to Top Button -->
+<button
+    type="button"
+    id="backToTop"
+    aria-label="Back to top"
+    title="Back to top"
+>
+    ↑
+</button>
 
 </body>
 

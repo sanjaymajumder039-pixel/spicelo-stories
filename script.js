@@ -810,7 +810,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Run only when the serving calculator exists
     if (!decreaseBtn || !increaseBtn || !servingCount) return;
 
-    const ingredientList = document.querySelector("#recipe + ul");
+    const ingredientList = document.querySelector("#recipe")?.closest(".recipe-ingredients")?.querySelector("ul");
 
     if (!ingredientList) return;
 
@@ -866,6 +866,27 @@ const cakeIngredients = [
     { special: "Chocolate Chips (Optional)" },
     { special: "Whipped Cream for Decoration" }
 ];
+const eggCurryIngredients = [
+    { min: 4, max: 4, unit: "", name: "Eggs" },
+    { min: 4, max: 4, unit: "", name: "Green Chillies" },
+    { min: 1, max: 1, unit: "", name: "Tomato" },
+    { min: 2, max: 2, unit: "", name: "Onions" },
+    { special: "Salt to taste" },
+    { min: 250, max: 250, unit: "ml", name: "Water" },
+    { min: 0.5, max: 0.5, unit: "spoon", name: "Turmeric Powder" },
+    { min: 4, max: 4, unit: "spoons", name: "Ginger and Garlic Paste" },
+    { min: 2, max: 2, unit: "spoons", name: "Mustard Oil" }
+];
+const jhalMuriIngredients = [
+    { min: 250, max: 250, unit: "g", name: "Muri (puffed rice)" },
+    { min: 1, max: 1, unit: "medium", name: "Onion, finely chopped" },
+    { min: 1, max: 1, unit: "spoon", name: "Mustard oil" },
+    { min: 5, max: 5, unit: "", name: "Cashews" },
+    { min: 5, max: 5, unit: "", name: "Raisins" },
+    { min: 1, max: 1, unit: "", name: "Green chilli, finely chopped" },
+    { min: 10, max: 10, unit: "", name: "Almonds" },
+    { min: 2, max: 2, unit: "small portions", name: "Fresh coriander leaves" }
+];
 
     // ==========================================
 // Biryani Ingredients
@@ -903,6 +924,10 @@ const biryaniIngredients = [
     recipeIngredients = noodlesIngredients;
 } else if (recipeName.includes("cake")) {
     recipeIngredients = cakeIngredients;
+} else if (recipeName.includes("jhal muri")) {
+    recipeIngredients = jhalMuriIngredients;
+} else if (recipeName.includes("egg curry")) {
+    recipeIngredients = eggCurryIngredients;
 } else {
     return;
 }
