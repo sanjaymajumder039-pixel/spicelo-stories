@@ -866,6 +866,33 @@ const cakeIngredients = [
     { special: "Chocolate Chips (Optional)" },
     { special: "Whipped Cream for Decoration" }
 ];
+const dalFryIngredients = [
+    { min: 200, max: 200, unit: "g", name: "Masoor Dal" },
+    { min: 1, max: 1, unit: "", name: "Onion" },
+    { min: 2, max: 2, unit: "", name: "Green Chillies" },
+    { min: 1, max: 1, unit: "spoon", name: "Red Chilli Powder" },
+    { min: 1, max: 1, unit: "", name: "Tomato" },
+    { min: 4, max: 4, unit: "pieces", name: "Raw Papaya" },
+    { min: 0.5, max: 0.5, unit: "spoon", name: "Cumin (Jeera)" },
+    { min: 1, max: 1, unit: "spoon", name: "Oil" },
+    { min: 1, max: 1, unit: "spoon", name: "Ghee" },
+    { min: 2, max: 2, unit: "", name: "Dry Red Chillies" },
+    { special: "Salt according to taste" },
+    { min: 200, max: 200, unit: "ml", name: "Water for boiling the dal" },
+    { min: 300, max: 300, unit: "ml", name: "Fresh water for cooking" }
+];
+const macherJholIngredients = [
+    { min: 500, max: 500, unit: "g", name: "Small-to-medium-size fish" },
+    { min: 2, max: 2, unit: "", name: "Tomatoes — 1 for paste and 1 chopped" },
+    { min: 2, max: 2, unit: "", name: "Green Chillies" },
+    { min: 1, max: 1, unit: "spoon", name: "Ginger Paste" },
+    { min: 2, max: 2, unit: "", name: "Potatoes" },
+    { min: 1, max: 1, unit: "spoon", name: "Cumin (Jeera) Paste" },
+    { min: 1, max: 1, unit: "", name: "Bay Leaf (Tej Patta)" },
+    { min: 2, max: 2, unit: "spoons", name: "Mustard Oil" },
+    { special: "Salt according to taste" },
+    { min: 250, max: 250, unit: "ml", name: "Water" }
+];
 const eggCurryIngredients = [
     { min: 4, max: 4, unit: "", name: "Eggs" },
     { min: 4, max: 4, unit: "", name: "Green Chillies" },
@@ -926,14 +953,21 @@ const biryaniIngredients = [
     recipeIngredients = cakeIngredients;
 } else if (recipeName.includes("jhal muri")) {
     recipeIngredients = jhalMuriIngredients;
+    } else if (recipeName.includes("macher jhol")) {
+    recipeIngredients = macherJholIngredients;
 } else if (recipeName.includes("egg curry")) {
     recipeIngredients = eggCurryIngredients;
+    } else if (recipeName.includes("masoor dal fry")) {
+    recipeIngredients = dalFryIngredients;
 } else {
     return;
 }
     // Both Pizza and Burger currently start with 2 servings
     
-    const baseServings = recipeName.includes("biryani") ? 4 : 2;
+    const baseServings =
+    recipeName.includes("biryani") ? 4 :
+    recipeName.includes("macher jhol") ? 3 :
+    2;
 
     let currentServings = baseServings;
 

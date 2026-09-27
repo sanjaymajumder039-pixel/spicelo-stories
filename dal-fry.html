@@ -218,6 +218,12 @@
                 <h1>
                     🍲 Masoor Dal Fry with Raw Papaya
                 </h1>
+                <button
+    type="button"
+    onclick="document.getElementById('recipe').scrollIntoView({ behavior: 'smooth' });"
+>
+    🍽️ Jump to Recipe
+</button>
 
                 <p class="recipe-intro">
 
@@ -331,9 +337,13 @@
                             Servings
                         </strong>
 
-                        <p>
-                            2 People
-                        </p>
+                        <div class="servings-control">
+    <button type="button" id="decreaseServing">−</button>
+    <span id="servingCount">2</span>
+    <button type="button" id="increaseServing">+</button>
+</div>
+                            
+                    
 
                     </div>
 
@@ -388,9 +398,9 @@
 
             <section class="recipe-ingredients">
 
-                <h2>
-                    Ingredients
-                </h2>
+                <h2 id="recipe">
+    Ingredients for Masoor Dal Fry with Raw Papaya
+</h2>
 
                 <p>
 
@@ -1079,7 +1089,14 @@
 
     <script src="script.js"></script>
 
-
+<button
+    type="button"
+    id="backToTop"
+    aria-label="Back to top"
+    title="Back to top"
+>
+    ↑
+</button>
 </body>
 
 </html>

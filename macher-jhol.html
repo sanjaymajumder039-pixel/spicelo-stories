@@ -149,6 +149,12 @@
                 <p class="recipe-label">SPICELO STORY</p>
 
                 <h1>🐟 Bengali Fish Curry (Macher Jhol)</h1>
+                <button
+    type="button"
+    onclick="document.getElementById('recipe').scrollIntoView({ behavior: 'smooth' });"
+>
+    🍽️ Jump to Recipe
+</button>
 
                 <p class="recipe-intro">
                     Learn how to make a simple homemade Bengali Fish Curry,
@@ -217,7 +223,11 @@
                     <span class="recipe-icon">🍽️</span>
                     <div>
                         <strong>Servings</strong>
-                        <p>3 People</p>
+                        <div class="servings-control">
+    <button type="button" id="decreaseServing">−</button>
+    <span id="servingCount">3</span>
+    <button type="button" id="increaseServing">+</button>
+</div>
                     </div>
                 </div>
 
@@ -243,7 +253,7 @@
             <!-- Ingredients -->
             <section class="recipe-ingredients">
 
-                <h2>Ingredients</h2>
+                <h2 id="recipe">Ingredients for Bengali Fish Curry (Macher Jhol)</h2>
 
                 <p>
                     <strong>For 3 persons</strong>
@@ -656,6 +666,14 @@
 
     <!-- Main JavaScript -->
     <script src="script.js"></script>
+    <button
+    type="button"
+    id="backToTop"
+    aria-label="Back to top"
+    title="Back to top"
+>
+    ↑
+</button>
 
 </body>
 
