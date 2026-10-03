@@ -488,18 +488,14 @@ function updateTimeGreeting() {
     /* 🌙 NIGHT */
     else {
 
-        greetingTitle.textContent = "🌙 Good Night! ✨";
+    greetingTitle.textContent = "Good Night!";
         greetingMessage.textContent =
             "Cozy moments, delicious stories.";
 
         atmosphere.className = "time-atmosphere night";
 
-        atmosphere.innerHTML = `
-            <span class="moon">🌙</span>
-            <span class="star star-one">✨</span>
-            <span class="star star-two">⭐</span>
-            <span class="star star-three">✨</span>
-        `;
+       atmosphere.innerHTML = "";
+        
     }
 }
 
