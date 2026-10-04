@@ -806,7 +806,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Run only when the serving calculator exists
     if (!decreaseBtn || !increaseBtn || !servingCount) return;
 
-    const ingredientList = document.querySelector("#recipe")?.closest(".recipe-ingredients")?.querySelector("ul");
+    const ingredientList = document.querySelector("#recipe")?.nextElementSibling;
 
     if (!ingredientList) return;
 

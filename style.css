@@ -4859,3 +4859,43 @@ body.dark-mode .recipe-method li::marker {
     }
 
 }
+/* ===== FINAL MOBILE RECIPE LIST FIX ===== */
+
+@media (max-width: 768px) {
+
+    .recipe-container ul,
+    .recipe-container ol {
+        padding-left: 28px;
+        padding-right: 18px;
+    }
+
+    .recipe-container ul li,
+    .recipe-container ol li {
+        font-size: 16px !important;
+        line-height: 1.55 !important;
+        margin: 8px 0 !important;
+    }
+
+}
+/* ===== FINAL MOBILE RECIPE WIDTH POLISH ===== */
+
+@media (max-width: 768px) {
+
+    .recipe-container {
+        padding: 20px 15px !important;
+    }
+
+    .recipe-container ul,
+    .recipe-container ol {
+        padding-left: 24px;
+        padding-right: 10px;
+    }
+
+    .recipe-container ul li,
+    .recipe-container ol li {
+        font-size: 16px !important;
+        line-height: 1.45 !important;
+        margin: 7px 0 !important;
+    }
+
+}
