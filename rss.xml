@@ -3,11 +3,19 @@
      xmlns:media="http://search.yahoo.com/mrss/">
 
   <channel>
-
+  
     <title>SpiceLo Stories</title>
     <link>https://spicelostories.com/</link>
     <description>Easy Recipes &amp; Food Stories from SpiceLo Stories</description>
+    <item>
 
+      <title>Easy Green Peas Potato Curry Recipe</title>
+      <link>https://spicelostories.com/green-peas-potato-curry.html</link>
+      <description>Easy homemade Green Peas Potato Curry (Matar Aloo Curry) made with green peas, potatoes, tomato, ginger, garlic and light spices.</description>
+      <enclosure url="images/green-peas-potato-curry/green-peas-potato-curry.jpg" type="image/jpeg"/>
+      <media:content url="https://spicelostories.com/images/green-peas-potato-curry/green-peas-potato-curry.jpg" medium="image" />
+
+    </item>
         <item>
 
       <title>Easy Masoor Dal Fry with Raw Papaya Recipe</title>

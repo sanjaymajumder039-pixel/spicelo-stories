@@ -910,6 +910,33 @@ const jhalMuriIngredients = [
     { min: 10, max: 10, unit: "", name: "Almonds" },
     { min: 2, max: 2, unit: "small portions", name: "Fresh coriander leaves" }
 ];
+const greenPeasPotatoCurryIngredients = [
+
+    { min: 200, max: 200, unit: "g", name: "Green Peas" },
+
+    { min: 2, max: 2, unit: "", name: "Potatoes" },
+
+    { min: 1, max: 1, unit: "spoon", name: "Ginger" },
+
+    { min: 1, max: 1, unit: "spoon", name: "Garlic" },
+
+    { min: 1, max: 1, unit: "spoon", name: "Cumin Seeds" },
+
+    { min: 1, max: 1, unit: "", name: "Onion" },
+
+    { min: 0.5, max: 0.5, unit: "spoon", name: "Turmeric Powder" },
+
+    { min: 1, max: 1, unit: "spoon", name: "Dry Red Chilli Powder" },
+
+    { min: 3, max: 3, unit: "spoons", name: "Mustard Oil" },
+
+    { special: "Salt to taste" },
+
+    { min: 1, max: 1, unit: "", name: "Tomato" },
+
+    { min: 300, max: 300, unit: "ml", name: "Water" }
+
+];
 
     // ==========================================
 // Biryani Ingredients
@@ -955,6 +982,8 @@ const biryaniIngredients = [
     recipeIngredients = eggCurryIngredients;
     } else if (recipeName.includes("masoor dal fry")) {
     recipeIngredients = dalFryIngredients;
+    } else if (recipeName.includes("green peas potato curry")) {
+    recipeIngredients = greenPeasPotatoCurryIngredients;
 } else {
     return;
 }
