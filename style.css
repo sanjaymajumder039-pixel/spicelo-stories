@@ -5048,3 +5048,20 @@ animation: latestLightMove 4s linear infinite;
 .recipe-like {
     margin-bottom: 22px !important;
 }
+/* ===== Creator Text Center Alignment ===== */
+
+.creator-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.creator-text h2::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.creator-text p {
+    margin-left: auto;
+    margin-right: auto;
+}
