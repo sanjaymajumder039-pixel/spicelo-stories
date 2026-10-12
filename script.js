@@ -677,7 +677,7 @@ async function loadLatestRecipes() {
 
         /* Latest 3 recipes */
 
-        const latestItems = items.slice(0, 3);
+        const latestItems = items.slice(-3).reverse();
 
         latestGrid.innerHTML = "";
 
@@ -910,6 +910,20 @@ const jhalMuriIngredients = [
     { min: 10, max: 10, unit: "", name: "Almonds" },
     { min: 2, max: 2, unit: "small portions", name: "Fresh coriander leaves" }
 ];
+const soyaChunkCurryIngredients = [
+    { min: 200, max: 200, unit: "g", name: "Soya Chunks" },
+    { min: 1, max: 1, unit: "spoon", name: "Ginger Paste" },
+    { min: 1, max: 1, unit: "spoon", name: "Garlic Paste" },
+    { min: 1, max: 1, unit: "", name: "Onion" },
+    { min: 1, max: 1, unit: "spoon", name: "Red Chilli Powder" },
+    { min: 2, max: 2, unit: "spoons", name: "Oil" },
+    { min: 2, max: 2, unit: "", name: "Potatoes" },
+    { min: 1, max: 1, unit: "spoon", name: "Cumin Seeds" },
+    { special: "Salt to taste" },
+    { min: 0.5, max: 0.5, unit: "spoon", name: "Turmeric Powder" },
+    { min: 0.5, max: 0.5, unit: "spoon", name: "Garam Masala" }
+];
+
 const greenPeasPotatoCurryIngredients = [
 
     { min: 200, max: 200, unit: "g", name: "Green Peas" },
@@ -984,6 +998,8 @@ const biryaniIngredients = [
     recipeIngredients = dalFryIngredients;
     } else if (recipeName.includes("green peas potato curry")) {
     recipeIngredients = greenPeasPotatoCurryIngredients;
+    } else if (recipeName.includes("soya chunk curry")) {
+    recipeIngredients = soyaChunkCurryIngredients;
 } else {
     return;
 }

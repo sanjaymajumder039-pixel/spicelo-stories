@@ -98,7 +98,14 @@
       <enclosure url="https://spicelostories.com/images/egg-curry.jpg" type="image/jpeg" />
       <media:content url="https://spicelostories.com/images/egg-curry.jpg" medium="image" />
     </item>
-
+    
+    <item>
+      <title>Soya Chunk Curry with Potatoes Recipe</title>
+      <link>https://spicelostories.com/soya-chunk-curry.html</link>
+      <description>Homemade Soya Chunk Curry with potatoes, ginger, garlic and aromatic Indian spices.</description>
+      <enclosure url="https://spicelostories.com/images/soya-chunk-curry.jpg" type="image/jpeg"/>
+      <media:content url="https://spicelostories.com/images/soya-chunk-curry.jpg" medium="image"/>
+    </item>
   </channel>
 
 </rss>
