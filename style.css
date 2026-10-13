@@ -3840,9 +3840,7 @@ animation: latestLightMove 4s linear infinite;
     border-radius: 14px;
     width: 100%;
     box-shadow: 0 4px 14px rgba(211, 84, 0, 0.12);
-    animation:
     
-    latestTextBlink 2s ease-in-out infinite;
 
     
 }
