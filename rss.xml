@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
      xmlns:media="http://search.yahoo.com/mrss/">
 
@@ -105,6 +105,14 @@
       <description>Homemade Soya Chunk Curry with potatoes, ginger, garlic and aromatic Indian spices.</description>
       <enclosure url="https://spicelostories.com/images/soya-chunk-curry.jpg" type="image/jpeg"/>
       <media:content url="https://spicelostories.com/images/soya-chunk-curry.jpg" medium="image"/>
+    </item>
+
+     <item>
+      <title>Homemade Aloo Baingan Curry Recipe</title>
+      <link>https://spicelostories.com/aloo-baingan-curry.html</link>
+      <description>Homemade Aloo Baingan Curry with potatoes, brinjal, green chillies, ginger and simple Indian spices. Enjoy it with white rice.</description>
+      <enclosure url="https://spicelostories.com/images/aloo-baingan-curry.jpg" type="image/jpeg"/>
+<media:content url="https://spicelostories.com/images/aloo-baingan-curry.jpg" medium="image"/>
     </item>
   </channel>
 

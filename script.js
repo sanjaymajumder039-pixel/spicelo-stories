@@ -951,6 +951,20 @@ const greenPeasPotatoCurryIngredients = [
     { min: 300, max: 300, unit: "ml", name: "Water" }
 
 ];
+const alooBainganCurryIngredients = [
+    { min: 4, max: 4, unit: "", name: "Potatoes, cut into pieces" },
+    { min: 2, max: 2, unit: "", name: "Brinjals, cut into pieces" },
+    { min: 1, max: 1, unit: "tsp", name: "Cumin Paste" },
+    { min: 1, max: 1, unit: "", name: "Onion" },
+    { min: 0.5, max: 0.5, unit: "tsp", name: "Turmeric Powder" },
+    { min: 2, max: 2, unit: "tbsp", name: "Cooking Oil" },
+    { min: 4, max: 4, unit: "", name: "Green Chillies" },
+    { min: 1, max: 1, unit: "tsp", name: "Ginger Paste" },
+    { min: 0.5, max: 0.5, unit: "tsp", name: "Black Cumin (Kalonji)" },
+    { special: "Salt to taste" },
+    { special: "Water — 1 glass" },
+    { special: "A little Garam Masala at the end" }
+];
 
     // ==========================================
 // Biryani Ingredients
@@ -998,6 +1012,8 @@ const biryaniIngredients = [
     recipeIngredients = dalFryIngredients;
     } else if (recipeName.includes("green peas potato curry")) {
     recipeIngredients = greenPeasPotatoCurryIngredients;
+    } else if (recipeName.includes("aloo baingan curry")) {
+    recipeIngredients = alooBainganCurryIngredients;
     } else if (recipeName.includes("soya chunk curry")) {
     recipeIngredients = soyaChunkCurryIngredients;
 } else {
