@@ -1,1 +1,2 @@
 vedio[[:space:]]folder/aloo-baingan-curry.mp4 filter=lfs diff=lfs merge=lfs -text
+vedio[[:space:]]folder/aloo-baingan-curry-compressed.mp4 filter=lfs diff=lfs merge=lfs -text
