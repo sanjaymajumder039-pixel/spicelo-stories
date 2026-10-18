@@ -28,10 +28,25 @@
 
     <url>
         <loc>https://spicelostories.com/jhal-muri.html</loc>
-    </url>
+</url>  
     
     <url>
         <loc>https://spicelostories.com/egg-curry.html</loc>
+    </url>
+        <url>
+        <loc>https://spicelostories.com/masoor-dal-fry.html</loc>
+    </url>
+
+    <url>
+        <loc>https://spicelostories.com/macher-jhol.html</loc>
+    </url>
+
+    <url>
+        <loc>https://spicelostories.com/green-peas-potato-curry.html</loc>
+    </url>
+
+    <url>
+        <loc>https://spicelostories.com/aloo-baingan-curry.html</loc>
     </url>
 
 </urlset>
