@@ -965,6 +965,20 @@ const alooBainganCurryIngredients = [
     { special: "Water — 1 glass" },
     { special: "A little Garam Masala at the end" }
 ];
+const kalaChanaAlooCurryIngredients = [
+    { min: 200, max: 200, unit: "g", name: "Kala Chana (Black Chickpeas)" },
+    { min: 2, max: 2, unit: "", name: "Potatoes" },
+    { min: 2, max: 2, unit: "", name: "Onions" },
+    { min: 1, max: 1, unit: "spoon", name: "Ginger Paste" },
+    { min: 1, max: 1, unit: "spoon", name: "Garlic Paste" },
+    { min: 0.5, max: 0.5, unit: "spoon", name: "Turmeric Powder" },
+    { min: 1, max: 1, unit: "spoon", name: "Cumin" },
+    { min: 1, max: 1, unit: "spoon", name: "Green Chilli Paste" },
+    { special: "Salt to taste" },
+    { min: 2, max: 2, unit: "glasses", name: "Water" },
+    { min: 1, max: 1, unit: "spoon", name: "Garam Masala" },
+    { min: 2, max: 2, unit: "spoons", name: "Mustard Oil" }
+];
 
     // ==========================================
 // Biryani Ingredients
@@ -1014,8 +1028,10 @@ const biryaniIngredients = [
     recipeIngredients = greenPeasPotatoCurryIngredients;
     } else if (recipeName.includes("aloo baingan curry")) {
     recipeIngredients = alooBainganCurryIngredients;
-    } else if (recipeName.includes("soya chunk curry")) {
+} else if (recipeName.includes("soya chunk curry")) {
     recipeIngredients = soyaChunkCurryIngredients;
+} else if (recipeName.includes("kala chana aloo curry")) {
+    recipeIngredients = kalaChanaAlooCurryIngredients;
 } else {
     return;
 }
