@@ -7,6 +7,7 @@
     <title>SpiceLo Stories</title>
     <link>https://spicelostories.com/</link>
     <description>Easy Recipes &amp; Food Stories from SpiceLo Stories</description>
+        
     <item>
 
       <title>Easy Green Peas Potato Curry Recipe</title>
@@ -113,6 +114,13 @@
       <description>Homemade Aloo Baingan Curry with potatoes, brinjal, green chillies, ginger and simple Indian spices. Enjoy it with white rice.</description>
       <enclosure url="https://spicelostories.com/images/aloo-baingan-curry.jpg" type="image/jpeg"/>
 <media:content url="https://spicelostories.com/images/aloo-baingan-curry.jpg" medium="image"/>
+    </item>
+    <item>
+      <title>Bengali-Style Potato, Raw Banana &amp; Chayote Curry</title>
+      <link>https://spicelostories.com/potato-raw-banana-chayote-curry.html</link>
+      <description>Homemade Bengali-style vegetable curry made with potato, raw banana, chayote and aromatic Indian spices.</description>
+      <enclosure url="images/potato-raw-banana-chayote-curry.jpg" type="image/jpeg"/>
+<media:content url="images/potato-raw-banana-chayote-curry.jpg" medium="image"/>
     </item>
   </channel>
 
