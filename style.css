@@ -765,7 +765,7 @@ ol li {
             rgba(0, 0, 0, 0.28),
             rgba(0, 0, 0, 0.42)
         ),
-        url("images/hero-banner-optimized.jpg");
+        url("images/optimized/hero-banner.webp");
 
     background-size: cover;
     background-position: center;

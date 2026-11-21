@@ -1,24 +1,26 @@
-const reveals = document.querySelectorAll(".reveal");
+﻿const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll", () => {
-
-    reveals.forEach(section => {
-
-        const top = section.getBoundingClientRect().top;
-
-        const windowHeight = window.innerHeight;
-
-        if(top < windowHeight - 100){
-
-            section.classList.add("active");
-
-        }
-
+if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: "0px 0px 100px 0px",
+        threshold: 0
     });
 
-});
+    reveals.forEach(section => revealObserver.observe(section));
+} else {
+    reveals.forEach(section => section.classList.add("active"));
+}
+
 /* =========================================
-   SPICELO STORIES — RECIPE DISCOVERY
+   SPICELO STORIES â€” RECIPE DISCOVERY
    Search + Category Filter
 ========================================= */
 
@@ -121,17 +123,17 @@ function updateRecipeResultMessage(count) {
     if (count === 0) {
 
         resultMessage.textContent =
-            "🍽️ No recipes found. Try another search or category.";
+            "\u{1F37D}\uFE0F No recipes found. Try another search or category.";
 
     } else if (count === 1) {
 
         resultMessage.textContent =
-            "🍽️ 1 recipe found";
+            "\u{1F37D}\uFE0F 1 recipe found";
 
     } else {
 
         resultMessage.textContent =
-            `🍽️ ${count} recipes found`;
+            `\u{1F37D}\uFE0F ${count} recipes found`;
 
     }
 
@@ -139,13 +141,17 @@ function updateRecipeResultMessage(count) {
 
 
 /* ===== Search ===== */
-
 if (recipeSearch) {
 
-    recipeSearch.addEventListener(
-        "input",
-        filterRecipes
-    );
+    let searchTimeout;
+
+    recipeSearch.addEventListener("input", () => {
+        clearTimeout(searchTimeout);
+
+        searchTimeout = setTimeout(() => {
+            filterRecipes();
+        }, 150);
+    });
 
 }
 
@@ -190,7 +196,7 @@ filterButtons.forEach(button => {
 
 });
 /* =========================================
-   SPICELO STORIES — SUPABASE
+   SPICELO STORIES â€” SUPABASE
    JHAL MURI LIKE & COMMENTS
 ========================================= */
 
@@ -283,7 +289,7 @@ if (
         if (error) {
 
             if (error.code === "23505") {
-                likeButton.textContent = "❤️ Already Liked";
+                likeButton.textContent = "â¤ï¸ Already Liked";
             } else {
                 console.error("Like error:", error);
                 likeButton.textContent = "Try Again";
@@ -293,7 +299,7 @@ if (
 
         } else {
 
-            likeButton.textContent = "❤️ Liked";
+            likeButton.textContent = "â¤ï¸ Liked";
 
         }
 
@@ -424,7 +430,7 @@ if (
 
 }
 /* =========================================
-   SpiceLo Stories — Dynamic Time Atmosphere
+   SpiceLo Stories â€” Dynamic Time Atmosphere
 ========================================= */
 
 function updateTimeGreeting() {
@@ -442,10 +448,10 @@ function updateTimeGreeting() {
     /* Clear previous atmosphere */
     atmosphere.innerHTML = "";
 
-    /* 🌅 MORNING */
+    /* ðŸŒ… MORNING */
     if (hour >= 5 && hour < 12) {
 
-        greetingTitle.textContent = "🌅 Good Morning! 🐦";
+        greetingTitle.textContent = "Good Morning!";
         greetingMessage.textContent =
             "A fresh day, a fresh story.";
 
@@ -455,12 +461,12 @@ function updateTimeGreeting() {
             
     }
 
-    /* ☀️ AFTERNOON */
+    /* â˜€ï¸ AFTERNOON */
     else if (hour >= 12 && hour < 17) {
 
-        greetingTitle.textContent = "☀️ Good Afternoon! 🦋";
+        greetingTitle.textContent = "Good Afternoon!";
         greetingMessage.textContent =
-            "What are we cooking today? 🍳";
+            "What are we cooking today? ðŸ³";
 
         atmosphere.className = "time-atmosphere afternoon";
 
@@ -471,21 +477,21 @@ function updateTimeGreeting() {
         `;
     }
 
-    /* 🌆 EVENING */
+    /* ðŸŒ† EVENING */
     else if (hour >= 17 && hour < 21) {
 
-        greetingTitle.textContent = "🌆 Good Evening! 🐦";
+        greetingTitle.textContent = "Good Evening!";
         greetingMessage.textContent =
             "Slow down, relax, and enjoy a delicious story.";
 
         atmosphere.className = "time-atmosphere evening";
 
         atmosphere.innerHTML = `
-            <span class="sunset">🌆</span>
+            <span class="sunset">ðŸŒ†</span>
         `;
     }
 
-    /* 🌙 NIGHT */
+    /* ðŸŒ™ NIGHT */
     else {
 
     greetingTitle.textContent = "Good Night!";
@@ -501,7 +507,7 @@ function updateTimeGreeting() {
 
 updateTimeGreeting();
 /* =========================================
-   SPICELO STORIES — DARK MODE
+   SPICELO STORIES â€” DARK MODE
 ========================================= */
 
 const darkModeButton =
@@ -516,7 +522,7 @@ if (darkModeButton) {
 
         document.body.classList.add("dark-mode");
 
-        darkModeButton.textContent = "☀️ Light Mode";
+        darkModeButton.textContent = "â˜€ï¸ Light Mode";
 
     }
 
@@ -536,7 +542,7 @@ if (darkModeButton) {
             );
 
             darkModeButton.textContent =
-                "☀️ Light Mode";
+                "â˜€ï¸ Light Mode";
 
         } else {
 
@@ -546,7 +552,7 @@ if (darkModeButton) {
             );
 
             darkModeButton.textContent =
-                "🌙 Dark Mode";
+                "ðŸŒ™ Dark Mode";
 
         }
 
@@ -621,14 +627,14 @@ function showCopiedMessage() {
 
     const originalText = button.innerHTML;
 
-    button.innerHTML = "✅ Link Copied!";
+    button.innerHTML = "âœ… Link Copied!";
 
     setTimeout(() => {
         button.innerHTML = originalText;
     }, 2000);
 }
 /* =========================================
-   SPICELO STORIES — AUTOMATIC LATEST RECIPES
+   SPICELO STORIES â€” AUTOMATIC LATEST RECIPES
    Reads latest recipes from RSS.xml
 ========================================= */
 
@@ -723,7 +729,7 @@ async function loadLatestRecipes() {
 
                     <button
                         onclick="window.location.href='${link}'">
-                        View Recipe →
+                        View Recipe â†’
                     </button>
 
                 </div>
@@ -751,7 +757,7 @@ async function loadLatestRecipes() {
 
 loadLatestRecipes();
 /* =========================================
-   SPICELO RECIPE ASSISTANT — CHAT TOGGLE
+   SPICELO RECIPE ASSISTANT â€” CHAT TOGGLE
 ========================================= */
 
 const assistantToggle =
@@ -879,7 +885,7 @@ const dalFryIngredients = [
 ];
 const macherJholIngredients = [
     { min: 500, max: 500, unit: "g", name: "Small-to-medium-size fish" },
-    { min: 2, max: 2, unit: "", name: "Tomatoes — 1 for paste and 1 chopped" },
+    { min: 2, max: 2, unit: "", name: "Tomatoes â€” 1 for paste and 1 chopped" },
     { min: 2, max: 2, unit: "", name: "Green Chillies" },
     { min: 1, max: 1, unit: "spoon", name: "Ginger Paste" },
     { min: 2, max: 2, unit: "", name: "Potatoes" },
@@ -962,7 +968,7 @@ const alooBainganCurryIngredients = [
     { min: 1, max: 1, unit: "tsp", name: "Ginger Paste" },
     { min: 0.5, max: 0.5, unit: "tsp", name: "Black Cumin (Kalonji)" },
     { special: "Salt to taste" },
-    { special: "Water — 1 glass" },
+    { special: "Water â€” 1 glass" },
     { special: "A little Garam Masala at the end" }
 ];
 const kalaChanaAlooCurryIngredients = [
@@ -1051,9 +1057,9 @@ const biryaniIngredients = [
     function formatNumber(value) {
 
         const fractions = {
-            0.25: "¼",
-            0.5: "½",
-            0.75: "¾"
+            0.25: "Â¼",
+            0.5: "Â½",
+            0.75: "Â¾"
         };
 
         const whole = Math.floor(value);
@@ -1122,7 +1128,7 @@ const biryaniIngredients = [
                 } else {
 
                     quantity =
-                        `${formatNumber(scaledMin)}–${formatNumber(scaledMax)}`;
+                        `${formatNumber(scaledMin)}â€“${formatNumber(scaledMax)}`;
 
                 }
 

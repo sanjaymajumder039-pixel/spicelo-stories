@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-
+<link rel="preload" as="image" href="images/optimized/hero-banner.webp" fetchpriority="high">
     <link rel="stylesheet" href="style.css">
     <link rel="canonical" href="https://spicelostories.com/">
 
@@ -115,7 +115,7 @@
     <div class="hero-intro">
 
     <img
-      src="images/spicelo-logo-optimized.png"
+      src="images/optimized/spicelo-logo.webp" width="150" height="150"
         alt="SpiceLo Stories Logo"
         class="spicelo-logo"
     >
@@ -181,13 +181,13 @@
 
         <div class="creator-image">
             <img
-                src="images/Sanjay-Majumdar-SpiceLo-Stories.png"
+                src="images/optimized/Sanjay-Majumdar-SpiceLo-Stories.webp" width="900" height="720"
                 alt="Sanjay Majumdar - Creator of SpiceLo Stories"
             >
         </div>
         <div class="creator-image">
     <img
-       src="images/creator/sanjay-majumdar-creator-clean.png"
+       src="images/optimized/sanjay-majumdar-creator-clean.webp" width="900" height="450"
         alt="Sanjay Majumdar - SpiceLo Stories"
     >
 </div>
@@ -237,7 +237,7 @@
 </div>
 <div class="food-grid reveal">
 <div class="food-card" data-category="Italian">
-    <img src="images/pizza.png" alt="Pizza">
+    <img src="images/optimized/pizza.webp" alt="Pizza" width="700" height="700">
     
     <h3>🍕 Pizza</h3>
     <p>Cheesy Italian pizza with fresh toppings.</p>
@@ -245,14 +245,14 @@
 </div>
 
 <div class="food-card" data-category="Fast Food">
-    <img src="images/burger.png" alt="Burger">
+    <img src="images/optimized/burger.webp" alt="Burger" width="700" height="525">
     <h3>🍔 Burger</h3>
     <p>Juicy burger with fresh vegetables and cheese.</p>
     <button onclick="window.location.href='burger.html'">View Recipe</button>
 </div>
 
 <div class="food-card" data-category="Indian">
-    <img src="images/biryani.jpg" alt="Chicken Biryani">
+    <img src="images/optimized/biryani.webp" alt="Chicken Biryani" width="800" height="1200">
     <h3>🍗 Chicken Biryani</h3>
     <p>Authentic Indian biryani with aromatic spices.</p>
     <button onclick="window.location.href='biryani.html'">
@@ -261,7 +261,7 @@
 </div>
 
 <div class="food-card" data-category="Fast Food">
-    <img src="images/noodles.png" alt="Noodles">
+    <img src="images/optimized/noodles.webp" alt="Noodles" width="700" height="525">
     <h3>🍜 Noodles</h3>
     <p>Delicious noodles tossed with fresh vegetables.</p>
     <button onclick="window.location.href='noodles.html'">
@@ -271,7 +271,7 @@
 
 <div class="food-card" data-category="Desserts">
 
-    <img src="images/cake.png" alt="Cake">
+    <img src="images/optimized/cake.webp" alt="Cake" width="700" height="700">
     <h3>🍰 Cake</h3>
     <p>Soft and creamy cake for every celebration.</p>
 
@@ -286,9 +286,9 @@
 <div class="food-card" data-category="Indian">
 
     <img
-        src="images/jhal-muri/jhal-muri.jpg"
+        src="images/optimized/jhal-muri.webp" width="700" height="933"
         alt="Jhal Muri"
-    >
+     loading="lazy">
 
     <h3>🥣 Jhal Muri</h3>
 
@@ -305,9 +305,9 @@
 <div class="food-card" data-category="Indian">
 
     <img
-        src="images/egg-curry.jpg"
+        src="images/optimized/egg-curry.webp" width="699" height="1068"
         alt="Homemade Egg Curry"
-    >
+     loading="lazy">
 
     <h3>🥚 Egg Curry</h3>
 
@@ -324,9 +324,9 @@
 <div class="food-card" data-category="Indian">
 
     <img
-        src="images/macher-jhol/macher-jhol-ready.jpg"
+        src="images/optimized/macher-jhol-ready.webp" width="700" height="700"
         alt="Bengali Fish Curry Macher Jhol"
-    >
+     loading="lazy">
 
     <h3>🐟 Bengali Fish Curry</h3>
 
@@ -342,9 +342,9 @@
 <div class="food-card" data-category="Indian">
 
     <img
-        src="images/dal-fry/dal-fry-ready.jpg"
+        src="images/optimized/dal-fry-ready.webp" width="700" height="700"
         alt="Masoor Dal Fry with Raw Papaya"
-    >
+     loading="lazy">
 
     <h3>🍲 Masoor Dal Fry</h3>
 
@@ -358,9 +358,9 @@
 <!-- Green Peas Potato Curry -->
 <div class="food-card" data-category="Indian">
     <img
-        src="images/green-peas-potato-curry/green-peas-potato-curry.jpg"
+        src="images/optimized/green-peas-potato-curry.webp" width="700" height="700"
         alt="Green Peas Potato Curry"
-    >
+     loading="lazy">
 
     <h3>🥔 Green Peas Potato Curry</h3>
 
@@ -373,7 +373,7 @@
 <!-- Soya Chunk Curry with Potatoes -->
 <div class="food-card" data-category="Indian">
     <img
-        src="images/soya-chunk-curry.jpg"
+        src="images/optimized/soya-chunk-curry.webp" width="700" height="700"
         alt="Soya Chunk Curry with Potatoes"
         loading="lazy"
     >
@@ -389,7 +389,7 @@
 <!-- Aloo Baingan Curry -->
 <div class="food-card" data-category="Indian">
     <img
-        src="images/aloo-baingan-curry.jpg"
+        src="images/optimized/aloo-baingan-curry.webp" width="700" height="700"
         alt="Homemade Aloo Baingan Curry"
         loading="lazy"
     >
@@ -405,7 +405,7 @@
 <!-- Kala Chana Aloo Curry -->
 <div class="food-card" data-category="Indian">
     <img
-        src="images/kala-chana-aloo-curry.jpg"
+        src="images/optimized/kala-chana-aloo-curry.webp" width="700" height="700"
         alt="Homemade Kala Chana Aloo Curry with black chickpeas and potatoes"
         loading="lazy"
     >
@@ -425,7 +425,7 @@
 <div class="food-card" data-category="Indian">
 
     <img
-        src="images/potato-raw-banana-chayote-curry.jpg"
+        src="images/optimized/potato-raw-banana-chayote-curry.webp" width="700" height="700"
         alt="Bengali-Style Potato, Raw Banana and Chayote Curry"
         loading="lazy"
     >
@@ -521,7 +521,6 @@
 
 </footer>
 
-</div>
 <!-- WhatsApp Floating Button -->
 
 <a
