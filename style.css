@@ -21,14 +21,10 @@ body {
     font-family: "Inter", Arial, sans-serif;
     font-size: 17px;
     line-height: 1.7;
-    animation: fadeIn 0.8s ease-in;
 }
-
-
 /* ==========================================================
    02. TYPOGRAPHY
    ========================================================== */
-
 h1 {
 
     color: #d35400;
@@ -789,23 +785,6 @@ ol li {
     overflow: hidden;
 }
 
-
-/* Subtle Banner Zoom */
-
-.hero-banner::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: inherit;
-
-    transform: scale(1.02);
-    transition: transform 0.8s ease;
-}
-
-.hero-banner:hover::before {
-    transform: scale(1.05);
-}
 
 
 /* Keep Button Above Background */
@@ -2693,15 +2672,7 @@ footer {
 
 /* 🦋 Butterfly */
 
-.time-atmosphere.morning .butterfly-one {
-    position: absolute;
-    bottom: 55px;
-    left: 15%;
-    font-size: 22px;
-    z-index: 3;
 
-    animation: morningButterfly 6s ease-in-out infinite;
-}
 
 
 /* =========================================
@@ -2711,70 +2682,12 @@ footer {
 
 /* 🐦 Bird 1 — LEFT → RIGHT */
 
-@keyframes morningBirdOne {
 
-    0% {
-        left: -50px;
-        transform: translateY(0) scaleX(-1) scale(0.9);
-        opacity: 0;
-    }
-
-    8% {
-        opacity: 1;
-    }
-
-    35% {
-        transform: translateY(-15px) scaleX(-1) scale(1);
-    }
-
-    60% {
-        transform: translateY(8px) scaleX(-1) scale(1);
-    }
-
-    92% {
-        opacity: 1;
-    }
-
-    100% {
-        left: calc(100% + 50px);
-        transform: translateY(-5px) scaleX(-1) scale(0.9);
-        opacity: 0;
-    }
-}
 
 
 /* 🐦 Bird 2 — LEFT → RIGHT */
 
-@keyframes morningBirdTwo {
 
-    0% {
-        left: -80px;
-        transform: translateY(0) scale(0.8);
-        opacity: 0;
-    }
-
-    8% {
-        opacity: 0.9;
-    }
-
-    40% {
-        transform: translateY(18px) scale(0.95);
-    }
-
-    70% {
-        transform: translateY(-10px) scale(1);
-    }
-
-    92% {
-        opacity: 0.9;
-    }
-
-    100% {
-        left: calc(100% + 80px);
-        transform: translateY(5px) scale(0.8);
-        opacity: 0;
-    }
-}
 
 
 /* 🌅 Gentle sunrise glow */
@@ -2800,28 +2713,7 @@ footer {
 
 /* 🦋 Gentle butterfly movement */
 
-@keyframes morningButterfly {
 
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-
-    25% {
-        transform: translate(12px, -10px) rotate(4deg);
-    }
-
-    50% {
-        transform: translate(25px, 5px) rotate(-3deg);
-    }
-
-    75% {
-        transform: translate(12px, -8px) rotate(3deg);
-    }
-
-    100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-}
 
 
 /* =========================================
@@ -2840,11 +2732,6 @@ footer {
     .time-atmosphere.morning .bird {
         font-size: 20px;
     }
-
-    .time-atmosphere.morning .butterfly-one {
-        font-size: 18px;
-    }
-
 }
 /* ==========================================================
    SPICELO STORIES — WORLD CLASS HOMEPAGE POLISH
