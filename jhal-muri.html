@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,7 +19,7 @@
     <meta name="description"
         content="A simple 10-minute Jhal Muri recipe with a personal food story, ingredients and easy preparation by SpiceLo Stories.">
 
-    <link rel="icon" type="image/png" href="images/spicelo-logo.png">
+    <link rel="icon" type="image/webp" href="images/optimized/spicelo-logo.webp">
 
     <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">
@@ -89,12 +89,12 @@
     <!-- Navigation -->
     <nav>
     <a href="index.html">Home</a>
-    <a href="index.html#recipes">Recipes</a>
+    <a href="index.html#recipes">&#x2190; Back to Recipes</a>
     <a href="index.html#about">About</a>
     <a href="index.html#contact">Contact</a>
 
     <button type="button" id="darkModeButton">
-        🌙 Dark Mode
+        &#x1F319; Dark Mode
     </button>
 </nav>
 
@@ -111,7 +111,7 @@
     type="button"
     onclick="document.getElementById('recipe').scrollIntoView({ behavior: 'smooth' });"
 >
-    🍽️ Jump to Recipe
+    &#x1F37D;&#xFE0F; Jump to Recipe
 </button>
 
             <p class="recipe-intro">
@@ -157,7 +157,7 @@
         <section class="recipe-info">
 
     <div class="recipe-detail">
-        <span class="recipe-icon">⏱️</span>
+        <span class="recipe-icon">&#x23F1;&#xFE0F;</span>
         <div>
             <strong>Ready In</strong>
             <p>10 min</p>
@@ -165,7 +165,7 @@
     </div>
 
     <div class="recipe-detail">
-        <span class="recipe-icon">🌅</span>
+        <span class="recipe-icon">&#x1F305;</span>
         <div>
             <strong>Best Time</strong>
             <p>Morning or Evening</p>
@@ -173,11 +173,11 @@
     </div>
 
     <div class="recipe-detail">
-    <span class="recipe-icon">🍽️</span>
+    <span class="recipe-icon">&#x1F37D;&#xFE0F;</span>
     <div>
         <strong>Servings</strong>
         <div class="servings-control">
-            <button type="button" id="decreaseServing">−</button>
+            <button type="button" id="decreaseServing">&#x2212;</button>
             <span id="servingCount">2</span>
             <button type="button" id="increaseServing">+</button>
         </div>
@@ -244,15 +244,15 @@
     <div class="share-buttons">
 
         <button type="button" onclick="shareOnFacebook()">
-            📘 Facebook
+            &#x1F4D8; Facebook
         </button>
 
         <button type="button" onclick="shareOnPinterest()">
-            📌 Pinterest
+            &#x1F4CC; Pinterest
         </button>
 
         <button type="button" onclick="copyRecipeLink()">
-            🔗 Copy Link
+            &#x1F517; Copy Link
         </button>
 
     </div>
@@ -264,7 +264,7 @@
 
     <div class="recipe-like">
         <button type="button" id="likeButton">
-            ❤️ Like this recipe
+            &#x2764;&#xFE0F; Like this recipe
         </button>
 
         <span id="likeCount">0 Likes</span>
@@ -272,7 +272,7 @@
 
     <div class="recipe-comments">
 
-        <h2>💬 Comments</h2>
+        <h2>&#x1F4AC; Comments</h2>
 
         <form id="commentForm">
 
@@ -310,12 +310,12 @@
 <!-- Print Recipe Button -->
 <div class="recipe-print">
     <button type="button" onclick="window.print()">
-        🖨️ Print Recipe
+        &#x1F5A8;&#xFE0F; Print Recipe
     </button>
 </div>
         <!-- Back Button -->
         <div class="recipe-back">
-            <a href="index.html#recipes">← Back to Recipes</a>
+            <a href="index.html#recipes">&#x2190; Back to Recipes</a>
 
         </div>
 
@@ -349,8 +349,8 @@
 
 
     <footer>
-        <p>© 2026 SpiceLo Stories. All Rights Reserved.</p>
-    </footer>
+    <p>&#x00A9; 2026 SpiceLo Stories. All Rights Reserved.</p>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
 <!-- Back to Top Button -->
@@ -359,9 +359,7 @@
     id="backToTop"
     aria-label="Back to top"
     title="Back to top"
->
-    ↑
-</button>
+>&#x2191;</button>
 </body>
 
 </html>
