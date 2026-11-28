@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
      xmlns:media="http://search.yahoo.com/mrss/">
 
@@ -121,6 +121,13 @@
       <description>Homemade Bengali-style vegetable curry made with potato, raw banana, chayote and aromatic Indian spices.</description>
       <enclosure url="https://spicelostories.com/images/optimized/potato-raw-banana-chayote-curry.webp" type="image/webp"/>
 <media:content url="https://spicelostories.com/images/optimized/potato-raw-banana-chayote-curry.webp" medium="image"/>
+    </item>
+        <item>
+      <title>Aloo Gobhi Ki Sabzi with Homemade Puri Recipe</title>
+      <link>https://spicelostories.com/aloo-gobhi-sabzi-with-homemade-puri.html</link>
+      <description>Homemade Aloo Gobhi Ki Sabzi with fresh whole wheat puri, prepared with simple Indian ingredients and a personal village food memory.</description>
+      <enclosure url="/images/aloo-gobhi-sabzi.jpg" type="image/jpeg"/>
+     <media:content url="/images/aloo-gobhi-sabzi.jpg" medium="image"/>
     </item>
   </channel>
 

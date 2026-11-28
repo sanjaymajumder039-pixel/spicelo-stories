@@ -633,6 +633,67 @@ function showCopiedMessage() {
     }, 2000);
 }
 /* =========================================
+   SPICELO STORIES - FAVORITE RECIPES
+========================================= */
+
+const favoriteButton = document.getElementById("favoriteRecipeButton");
+
+if (favoriteButton) {
+
+    const recipeSlug = document.body.dataset.recipeSlug;
+    const storageKey = "spiceloFavoriteRecipes";
+
+    function getFavoriteRecipes() {
+        try {
+            return JSON.parse(localStorage.getItem(storageKey)) || [];
+        } catch (error) {
+            console.error("Favorites loading error:", error);
+            return [];
+        }
+    }
+
+    function updateFavoriteButton() {
+
+        const favorites = getFavoriteRecipes();
+        const isFavorite = favorites.includes(recipeSlug);
+
+        favoriteButton.textContent = isFavorite
+            ? "Remove from Favorites"
+            : "Add to Favorites";
+
+        favoriteButton.setAttribute(
+            "aria-pressed",
+            String(isFavorite)
+        );
+    }
+
+    favoriteButton.addEventListener("click", function () {
+
+        let favorites = getFavoriteRecipes();
+
+        if (favorites.includes(recipeSlug)) {
+
+            favorites = favorites.filter(
+                slug => slug !== recipeSlug
+            );
+
+        } else {
+
+            favorites.push(recipeSlug);
+
+        }
+
+        localStorage.setItem(
+            storageKey,
+            JSON.stringify(favorites)
+        );
+
+        updateFavoriteButton();
+    });
+
+    updateFavoriteButton();
+}
+/* =========================================
    SPICELO STORIES - AUTOMATIC LATEST RECIPES
    Reads latest recipes from RSS.xml
 ========================================= */
@@ -984,6 +1045,39 @@ const kalaChanaAlooCurryIngredients = [
     { min: 1, max: 1, unit: "spoon", name: "Garam Masala" },
     { min: 2, max: 2, unit: "spoons", name: "Mustard Oil" }
 ];
+// Aloo Gobhi with Homemade Puri Ingredients
+
+const alooGobhiPuriIngredients = [
+
+    { min: 2, max: 2, unit: "", name: "Medium Potatoes" },
+
+    { min: 500, max: 500, unit: "g", name: "Cauliflower" },
+
+    { min: 2, max: 2, unit: "spoons", name: "Cooking Oil" },
+
+    { min: 3, max: 3, unit: "spoons", name: "Ginger-Garlic Paste" },
+
+    { min: 0.5, max: 0.5, unit: "spoon", name: "Turmeric Powder" },
+
+    { min: 1, max: 1, unit: "spoon", name: "Red Chilli Powder" },
+
+    { special: "Salt to taste" },
+
+    { min: 1, max: 1, unit: "glass", name: "Water for Sabzi" },
+
+    { min: 0.5, max: 0.5, unit: "spoon", name: "Cumin Seeds for Finishing Tadka" },
+
+    { special: "Bay Leaf for Finishing Tadka" },
+
+    { min: 500, max: 500, unit: "g", name: "Whole Wheat Flour" },
+
+    { min: 250, max: 250, unit: "g", name: "Sunflower Oil for Frying" },
+
+    { min: 1, max: 1, unit: "spoon", name: "Sugar" },
+
+    { special: "Hot Water as needed for kneading dough" }
+
+];
 
     // ==========================================
 // Biryani Ingredients
@@ -1037,6 +1131,8 @@ const biryaniIngredients = [
     recipeIngredients = soyaChunkCurryIngredients;
 } else if (recipeName.includes("kala chana aloo curry")) {
     recipeIngredients = kalaChanaAlooCurryIngredients;
+} else if (recipeName.includes("aloo gobhi")) {
+    recipeIngredients = alooGobhiPuriIngredients;
 } else {
     return;
 }
